@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Admin;
 use App\Http\Controllers\Pegawai;
 
@@ -12,7 +15,9 @@ Route::post('/login', [AuthController::class, 'login'])->name('login.post');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/', [HomeController::class, 'index']);
-
+Route::get('/about', [AboutController::class, 'index']);
+Route::get('/article', [ArticleController::class, 'index']);
+Route::get('/contact', [ContactController::class, 'index']);
 
 Route::group(['as' => 'pegawai.', 'prefix' => '/pegawai', 'middleware' => 'auth'], function () {
 	Route::get('/dashboard', [Pegawai\DashboardController::class, 'index'])->name('dashboard');
