@@ -27,7 +27,13 @@ class AuthController extends Controller
 		if (!Auth::attempt($credentials)) {
 			return back()->with("msg", "Login gagal");
 		}
-		return redirect()->route('admin.dashboard');
+
+		if (auth()->user()->role_id == 2) {
+			$route = "admin.dashboard";
+		} else {
+			$route = "pegawai.dashboard";
+		}
+		return redirect()->route($route);
 	}
 
 	public function logout()
