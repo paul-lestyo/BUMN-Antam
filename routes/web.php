@@ -23,6 +23,7 @@ Route::group(['as' => 'pegawai.', 'prefix' => '/pegawai', 'middleware' => 'auth'
 	Route::get('/dashboard', [Pegawai\DashboardController::class, 'index'])->name('dashboard');
 });
 
-Route::group(['as' => 'admin.', 'prefix' => '/admin', 'middleware' => 'auth'], function () {
-	Route::get('/dashboard', [Admin\DashboardController::class, 'index'])->name('dashboard');
+Route::group(['as' => 'admin.', 'prefix' => 'admin'], function () {
+	Route::get('dashboard', [Admin\DashboardController::class, 'index'])->name('dashboard');
+    Route::resource('divisi', 'App\Http\Controllers\Admin\DivisiController');
 });
