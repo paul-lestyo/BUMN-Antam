@@ -19,11 +19,12 @@ Route::get('/about', [AboutController::class, 'index']);
 Route::get('/article', [ArticleController::class, 'index']);
 Route::get('/contact', [ContactController::class, 'index']);
 
-Route::group(['as' => 'pegawai.', 'prefix' => '/pegawai', 'middleware' => 'auth'], function () {
-	Route::get('/dashboard', [Pegawai\DashboardController::class, 'index'])->name('dashboard');
+Route::group(['as' => 'pegawai.', 'prefix' => 'pegawai', 'middleware' => 'auth'], function () {
+	Route::get('dashboard', [Pegawai\DashboardController::class, 'index'])->name('dashboard');
+	Route::resource('inbox', 'App\Http\Controllers\Pegawai\InboxController');
 });
 
-Route::group(['as' => 'admin.', 'prefix' => 'admin'], function () {
+Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => 'auth'], function () {
 	Route::get('dashboard', [Admin\DashboardController::class, 'index'])->name('dashboard');
-    Route::resource('divisi', 'App\Http\Controllers\Admin\DivisiController');
+	Route::resource('divisi', 'App\Http\Controllers\Admin\DivisiController');
 });

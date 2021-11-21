@@ -15,7 +15,7 @@
                   <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
               </div>
               <div class="info">
-                  {{-- <a href="#" class="d-block">{{ auth()->user()->username }}</a> --}}
+                  <a href="#" class="d-block">{{ auth()->user()->username }}</a>
               </div>
           </div>
 
@@ -60,6 +60,32 @@
                           </li>
                       </ul>
                   </li>
+
+                  {{-- pegawai --}}
+                  <li class="nav-item has-treeview {{ Request::is('pegawai/inbox*')?'menu-open':'' }}">
+                    <a href="#" class="nav-link {{ Request::is('pegawai/inbox*')?'active':'' }}">
+                        <i class="nav-icon fa fa-envelope"></i>
+                        <p>
+                            Kontak Admin
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/pegawai/inbox/create"
+                                class="nav-link {{ Request::is('pegawai/inbox/create')?'active':'' }}">
+                                <i class="fa fa-plus nav-icon"></i>
+                                <p>Kirim Pesan</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/pegawai/inbox" class="nav-link {{ Request::is('pegawai/inbox')?'active':'' }}">
+                                <i class="fa fa-list nav-icon"></i>
+                                <p>Semua Pesan</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
               </ul>
           </nav>
           <!-- /.sidebar-menu -->
