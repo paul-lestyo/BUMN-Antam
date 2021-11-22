@@ -30,12 +30,12 @@
                       <a href="{{ route('admin.dashboard') }}" class="nav-link">
                           <i class="nav-icon fas fa-tachometer-alt"></i>
                           <p>
-                             Dashboard
+                              Dashboard
                           </p>
                       </a>
                   </li>
 
-                  {{-- admin --}}
+                  @if (auth()->user()->role_id == 2)
                   <li class="nav-item has-treeview {{ Request::is('admin/divisi*')?'menu-open':'' }}">
                       <a href="#" class="nav-link {{ Request::is('admin/divisi*')?'active':'' }}">
                           <i class="nav-icon fa fa-sitemap"></i>
@@ -60,32 +60,32 @@
                           </li>
                       </ul>
                   </li>
-
-                  {{-- pegawai --}}
+                  @elseif (auth()->user()->role_id == 1)
                   <li class="nav-item has-treeview {{ Request::is('pegawai/inbox*')?'menu-open':'' }}">
-                    <a href="#" class="nav-link {{ Request::is('pegawai/inbox*')?'active':'' }}">
-                        <i class="nav-icon fa fa-envelope"></i>
-                        <p>
-                            Kontak Admin
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="/pegawai/inbox/create"
-                                class="nav-link {{ Request::is('pegawai/inbox/create')?'active':'' }}">
-                                <i class="fa fa-plus nav-icon"></i>
-                                <p>Kirim Pesan</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/pegawai/inbox" class="nav-link {{ Request::is('pegawai/inbox')?'active':'' }}">
-                                <i class="fa fa-list nav-icon"></i>
-                                <p>Semua Pesan</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+                      <a href="#" class="nav-link {{ Request::is('pegawai/inbox*')?'active':'' }}">
+                          <i class="nav-icon fa fa-envelope"></i>
+                          <p>
+                              Kontak Admin
+                              <i class="right fas fa-angle-left"></i>
+                          </p>
+                      </a>
+                      <ul class="nav nav-treeview">
+                          <li class="nav-item">
+                              <a href="/pegawai/inbox/create"
+                                  class="nav-link {{ Request::is('pegawai/inbox/create')?'active':'' }}">
+                                  <i class="fa fa-plus nav-icon"></i>
+                                  <p>Kirim Pesan</p>
+                              </a>
+                          </li>
+                          <li class="nav-item">
+                              <a href="/pegawai/inbox" class="nav-link {{ Request::is('pegawai/inbox')?'active':'' }}">
+                                  <i class="fa fa-list nav-icon"></i>
+                                  <p>Semua Pesan</p>
+                              </a>
+                          </li>
+                      </ul>
+                  </li>
+                  @endif
               </ul>
           </nav>
           <!-- /.sidebar-menu -->

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateInboxesTable extends Migration
+class CreateContactsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateInboxesTable extends Migration
      */
     public function up()
     {
-        Schema::create('inboxes', function (Blueprint $table) {
+        Schema::create('contacts', function (Blueprint $table) {
             $table->id();
-            $table->string('subject');
-            $table->foreignId('pengirim')->references('id')->on('pegawais')->constrained();
-            $table->foreignId('penerima')->nullable()->references('id')->on('pegawais')->constrained();
-            $table->text('pesan');
+            $table->string('name');
+            $table->string('deskripsi');
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ class CreateInboxesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('inboxes');
+        Schema::dropIfExists('contacts');
     }
 }

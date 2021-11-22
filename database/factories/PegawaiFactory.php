@@ -22,7 +22,7 @@ class PegawaiFactory extends Factory
             'alamat_pegawai' => $this->faker->address(),
             'no_telp' => $this->faker->phoneNumber(),
             'golongan' => '1a',
-            'user_id' => User::factory()->create()->id,
+            'user_id' => User::factory(),
             'divisi_id' => Divisi::inRandomOrder()->first()
         ];
     }
