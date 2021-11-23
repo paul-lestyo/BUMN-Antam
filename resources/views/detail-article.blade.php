@@ -59,7 +59,7 @@
         width: 364px !important;
         margin-top: 56px !important;
         width: 25.25rem !important;
-        border-top: 8px solid #1E7872 !important;
+        border: unset;
         box-shadow: 0 .250rem .50rem rgba(0, 0, 0, .1) !important;
     }
 
@@ -67,17 +67,21 @@
         padding: 32px 40px !important;
     }
 
+    /* @media only screen and (min-width: 768px) {
+        body .explain .card-desc {
+            padding-top: 40px;
+        }
+    } */
+
     body .explain .card-title {
-        /* font-weight: 700; */
-        font-weight: 500;
+        font-weight: 700;
         /* color: #EEEEEE; */
         color: #0A0F16;
     }
 
     body .explain .card-text {
         font-weight: 400;
-        /* font-size: 16px; */
-        font-size: 13px;
+        font-size: 16px;
         /* color: #888888; */
         color: #969696;
     }
@@ -88,23 +92,16 @@
 @section('content')
 <section class="explain">
 
-    <div class="my-3 container-xxl">
-        <div class="row text-center d-block mx-0">
-            <h1>
-                Contact Us
+    <div class="my-2 container-xl">
+        <div class="row text-center d-block mx-0 mb-5">
+            <small class="d-inline-block mb-2">{{ $article->category }}</small> 
+            <h1 class="mb-1">
+                {{ $article->judul }}
             </h1>
+            <small>{{ $article->author }} |  {{ $article->created_at->format('d M Y, H:i')}} WIB</small> 
         </div>
-        <div class="row mx-0 mt-3 d-flex justify-content-between mx-3 mx-md-4">
-            @foreach ($contacts as $contact)
-            <div class="card rounded-lg">
-                <div class="card-body">
-                    <div class="card-desc">
-                        <h4 class="card-title mb-1">{{ $contact->name }}</h4>
-                        <p class="card-text">{{ $contact->deskripsi }}</p>
-                    </div>
-                </div>
-            </div>
-            @endforeach
+        <div class="row mx-0 mt-3 mx-3 mx-md-4">
+            <p>{{ $article->deskripsi }}</p>
         </div>
     </div>
 

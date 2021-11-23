@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+.header-3-3 .hero {
+    padding: 4rem 2rem;
+}
+
+.header-3-3 .left-column {
+    margin-bottom: 0.75rem;
+    width: 100%;
+}
+
+.header-3-3 .title-text-big {
+    font: 600 2.25rem / normal Poppins, sans-serif;
+    margin-bottom: 1.25rem;
+    color: #243142;
+}
+
+.header-3-3 .text-caption {
+    font: 300 1rem/1.5rem Poppins, sans-serif;
+    letter-spacing: 0.025em;
+    color: #8b9caf;
+    margin-bottom: 5rem;
+}
+
+.header-3-3 .btn-get {
+    font: 600 1rem/1.5rem Poppins, sans-serif;
+    padding: 1rem 2rem;
+    border-radius: 999px;
+    border: 1px solid #4e91f9;
+    background-color: #4e91f9;
+    transition: 0.3s;
+}
+
+.header-3-3 .btn-get:hover {
+    background-color: #6da4f9;
+    border: 1px solid #6da4f9;
+}
+
+.header-3-3 .btn-outline {
+    font: 400 1rem/1.5rem Poppins, sans-serif;
+    padding: 1rem 1.5rem;
+    border-radius: 999px;
+    background-color: transparent;
+    border: 1px solid #a6b1be;
+    color: #a6b1be;
+    transition: 0.3s;
+}
+
+.header-3-3 .btn-outline:hover {
+    border: 1px solid #6da4f9;
+    color: #6da4f9;
+}
+
+.header-3-3 .btn-outline:hover div path {
+    fill: #6da4f9;
+}
+
+.header-3-3 .btn-outline:hover div rect {
+    stroke: #6da4f9;
+}
+
+.header-3-3 .right-column {
+    width: 100%;
+}
+
+.header-3-3 .hero-right {
+    right: 2rem;
+    bottom: 0;
+}
+
+.header-3-3 .card-outer {
+    padding-left: 0;
+    z-index: 1;
+}
+
+.header-3-3 .card {
+    transition: 0.4s;
+    top: 0px;
+    left: 0px;
+    background-color: #ffffff;
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+    width: 100%;
+    margin-top: 2.5rem;
+    box-shadow: -4px 4px 10px 0px rgba(224, 224, 224, 0.25);
+}
+
+.header-3-3 .card:hover {
+    top: -3px;
+    left: -3px;
+    transition: 0.4s;
+    box-shadow: -4px 8px 15px 0px rgba(167, 167, 167, 0.25);
+}
+
+.header-3-3 .card-name {
+    font: 600 1rem/1.5rem Poppins, sans-serif;
+    margin-bottom: 0.25rem;
+}
+
+.header-3-3 .card-job {
+    font: 300 0.75rem/1rem Poppins, sans-serif;
+    color: #aaa6a6;
+    margin-bottom: 0;
+}
+
+.header-3-3 .card-price-left {
+    font: 500 1rem/1.5rem Poppins, sans-serif;
+    margin-bottom: 0.125rem;
+    color: #1b8171;
+}
+
+.header-3-3 .card-caption {
+    font: 300 0.75rem/1rem Poppins, sans-serif;
+    color: #aaa6a6;
+    margin-bottom: 0;
+}
+
+.header-3-3 .card-price-right {
+    font: 500 1rem/1.5rem Poppins, sans-serif;
+    margin-bottom: 0.125rem;
+    color: #ff7468;
+}
+
+.header-3-3 .btn-hire {
+    font: 600 1rem/1.5rem Poppins, sans-serif;
+    padding: 0.75rem 4rem;
+    border-radius: 0.75rem;
+    margin-bottom: 0.125rem;
+    border: 1px solid #4e91f9;
+    background-color: #4e91f9;
+    transition: 0.3s;
+}
+
+.header-3-3 .btn-hire:hover {
+    background-color: #6da4f9;
+    border: 1px solid #6da4f9;
+}
+
+@media (min-width: 576px) {
+    .header-3-3 .title-text-big {
+        font-size: 3rem;
+        line-height: 1.2;
+    }
+}
+
+@media (min-width: 768px) {
+    .header-3-3 .hero {
+        padding: 4rem;
+    }
+
+    .header-3-3 .left-column {
+        margin-bottom: 3rem;
+    }
+
+    .header-3-3 .hero-right {
+        right: 4rem;
+    }
+
+    .header-3-3 .card {
+        margin-left: auto;
+        margin-top: 0;
+    }
+}
+
+@media (min-width: 992px) {
+    .header-3-3 .hero {
+        padding: 4rem 6rem 5rem;
+    }
+
+    .header-3-3 .left-column {
+        width: 50%;
+        margin-bottom: 0;
+    }
+
+    .header-3-3 .title-text-big {
+        font-size: 3.75rem;
+        line-height: 1.25;
+    }
+
+    .header-3-3 .right-column {
+        width: 50%;
+    }
+
+    .header-3-3 .hero-right {
+        right: 6rem;
+    }
+
+    .header-3-3 .card-outer {
+        padding-left: 4rem;
+    }
+}
