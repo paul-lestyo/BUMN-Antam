@@ -60,6 +60,18 @@
                           </li>
                       </ul>
                   </li>
+                  
+                  <li class="nav-item">
+                    <a href="{{ route('admin.pengajuan-cuti') }}" class="nav-link {{ Request::is('admin/pengajuan-cuti*')?'active':'' }}">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Pengajuan Cuti
+                        </p>
+                    </a>
+                </li>
+                  
+                
+
                   @elseif (auth()->user()->role_id == 1)
                   <li class="nav-item has-treeview {{ Request::is('pegawai/inbox*')?'menu-open':'' }}">
                       <a href="#" class="nav-link {{ Request::is('pegawai/inbox*')?'active':'' }}">
