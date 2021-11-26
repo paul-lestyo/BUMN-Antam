@@ -17,16 +17,14 @@ Route::get('/article', [HomeController::class, 'article'])->name('article');
 Route::get('/article/{id}', [HomeController::class, 'detailArticle'])->name('article.detail');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 
-Route::group(['as' => 'pegawai.', 'prefix' => 'pegawai', 'middleware' => 'auth'], function () {
+Route::group(['as' => 'pegawai.', 'prefix' => 'pegawai', 'middleware' => 'role:pegawai'], function () {
 	Route::get('dashboard', [Pegawai\DashboardController::class, 'index'])->name('dashboard');
 	Route::resource('inbox', 'App\Http\Controllers\Pegawai\InboxController');
 });
 
-Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => 'auth'], function () {
+Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => 'role:admin'], function () {
 	Route::get('dashboard', [Admin\DashboardController::class, 'index'])->name('dashboard');
 	Route::resource('divisi', Admin\DivisiController::class);
 	Route::get('pengajuan-cuti', [Admin\PengajuanCutiController::class, 'index'])->name('pengajuan-cuti');
 	Route::get('pegawai', [Admin\PegawaiController::class, 'index'])->name('pegawai');
 });
-
-

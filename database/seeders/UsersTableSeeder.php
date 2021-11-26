@@ -25,7 +25,7 @@ class UsersTableSeeder extends Seeder
 			array(
 				'id' => 1,
 				'username' => 'pegawai',
-				'email' => 'pegawai@email.com',
+				'email' => 'pegawai@gmail.com',
 				'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
 				'role_id' => 1,
 				'created_at' => NULL,
