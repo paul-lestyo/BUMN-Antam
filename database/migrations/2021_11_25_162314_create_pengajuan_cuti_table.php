@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateArticlesTable extends Migration
+class CreatePengajuanCutiTable extends Migration
 {
 	/**
 	 * Run the migrations.
@@ -13,13 +13,13 @@ class CreateArticlesTable extends Migration
 	 */
 	public function up()
 	{
-		Schema::dropIfExists('articles');
-		Schema::create('articles', function (Blueprint $table) {
+		Schema::dropIfExists('pengajuan_cuti');
+		Schema::create('pengajuan_cuti', function (Blueprint $table) {
 			$table->id();
-			$table->string('judul');
-			$table->text('deskripsi');
-			$table->string('author');
-			$table->string('category');
+			$table->foreignId('pegawai_id');
+			$table->date('started_at');
+			$table->date('end_at');
+			$table->string('keterangan');
 			$table->timestamps();
 		});
 	}
@@ -31,6 +31,6 @@ class CreateArticlesTable extends Migration
 	 */
 	public function down()
 	{
-		Schema::dropIfExists('articles');
+		Schema::dropIfExists('pengajuan_cuti');
 	}
 }

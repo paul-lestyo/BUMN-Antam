@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUsersTable extends Migration
+class CreateDivisiTable extends Migration
 {
 	/**
 	 * Run the migrations.
@@ -13,12 +13,10 @@ class CreateUsersTable extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('users', function (Blueprint $table) {
+		Schema::dropIfExists('divisi');
+		Schema::create('divisi', function (Blueprint $table) {
 			$table->id();
-			$table->string('username');
-			$table->string('email')->unique();
-			$table->string('password');
-			$table->foreignId('role_id');
+			$table->string("nama_divisi");
 			$table->timestamps();
 		});
 	}
@@ -30,6 +28,6 @@ class CreateUsersTable extends Migration
 	 */
 	public function down()
 	{
-		Schema::dropIfExists('users');
+		Schema::dropIfExists('divisi');
 	}
 }

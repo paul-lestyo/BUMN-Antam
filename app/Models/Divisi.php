@@ -7,11 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Divisi extends Model
 {
-    use HasFactory;
+	use HasFactory;
+	protected $table = "divisi";
+	protected $guarded = ['id'];
 
-    protected $guarded = ['id'];
-
-    public function pegawai(){
-        return $this->hasMany(Pegawai::class);
-    }
+	public function pegawai()
+	{
+		return $this->hasMany(Pegawai::class);
+	}
 }

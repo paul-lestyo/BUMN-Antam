@@ -6,28 +6,29 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateContactsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
-        Schema::create('contacts', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('deskripsi');
-            $table->timestamps();
-        });
-    }
+	/**
+	 * Run the migrations.
+	 *
+	 * @return void
+	 */
+	public function up()
+	{
+		Schema::dropIfExists('contacts');
+		Schema::create('contacts', function (Blueprint $table) {
+			$table->id();
+			$table->string('name');
+			$table->string('deskripsi');
+			$table->timestamps();
+		});
+	}
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('contacts');
-    }
+	/**
+	 * Reverse the migrations.
+	 *
+	 * @return void
+	 */
+	public function down()
+	{
+		Schema::dropIfExists('contacts');
+	}
 }
