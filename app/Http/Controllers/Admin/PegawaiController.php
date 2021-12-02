@@ -9,45 +9,49 @@ use Illuminate\Http\Request;
 
 class PegawaiController extends Controller
 {
-    public function index(){
-        $data = [
-            'title'=>'Pengelolaan Pegawai - Admin BUMN Antam',
-            'pegawai'=>Pegawai::with('divisi')->OrderBy('id', 'ASC')->get()
-        ];
+	public function index()
+	{
+		$data = [
+			'title' => 'Pengelolaan Pegawai - Admin BUMN Antam',
+			'pegawai' => Pegawai::with('divisi')->OrderBy('id', 'ASC')->get()
+		];
 
-        return view("admin.pegawai.index", $data);
-    }
+		return view("admin.pegawai.index", $data);
+	}
 
-    public function edit(Pegawai $pegawai, $id) {
-        $data = [
-            'title'=>'Edit Data Pegawai - Admin BUMN Antam',
-            'pegawai'=>$pegawai->with('divisi')->where('id', $id)->get(),
-            'divisi_pegawai'=>Divisi::get(),
-            
-        ];
+	public function edit(Pegawai $pegawai, $id)
+	{
+		$data = [
+			'title' => 'Edit Data Pegawai - Admin BUMN Antam',
+			'pegawai' => $pegawai->with('divisi')->where('id', $id)->get(),
+			'divisi_pegawai' => Divisi::get(),
 
-        return view("admin.pegawai.edit", $data);
-    }
+		];
 
-    public function update(Request $request, Pegawai $pegawai, $id) {
-        $validatedData = $request->validate([
-            'nip'=>'required',
-            'nama_pegawai'=>'required',
-            'alamat_pegawai'=>'required',
-            'no_telp'=>'required',
-            'golongan'=>'required',
-            'divisi_id'=>'required'
-        ]);
+		return view("admin.pegawai.edit", $data);
+	}
 
-        $pegawai->where('id', $id)->update($validatedData);
+	public function update(Request $request, Pegawai $pegawai, $id)
+	{
+		$validatedData = $request->validate([
+			'nip' => 'required',
+			'nama_pegawai' => 'required',
+			'alamat_pegawai' => 'required',
+			'no_telp' => 'required',
+			'golongan' => 'required',
+			'divisi_id' => 'required'
+		]);
 
-        return redirect()->route('admin.pegawai')->with('sukses','Data Pegawai Berhasil Diperbarui!');
-    }
+		$pegawai->where('id', $id)->update($validatedData);
 
-    public function destroy(Pegawai $pegawai, $id) {
+		return redirect()->route('admin.pegawai.index')->with('sukses', 'Data Pegawai Berhasil Diperbarui!');
+	}
 
-        $pegawai->where('id', $id)->delete();
+	public function destroy(Pegawai $pegawai, $id)
+	{
 
-        return redirect()->route('admin.pegawai')->with('sukses','Data Pegawai Berhasil Dihapus!');
-    }
+		$pegawai->where('id', $id)->delete();
+
+		return redirect()->route('admin.pegawai.index')->with('sukses', 'Data Pegawai Berhasil Dihapus!');
+	}
 }

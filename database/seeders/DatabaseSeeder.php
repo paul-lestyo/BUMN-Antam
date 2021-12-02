@@ -24,6 +24,6 @@ class DatabaseSeeder extends Seeder
 
 		About::factory()->create();
 
-		Contact::factory()->count(9)->create();
+		Contact::factory()->create();
 	}
 }

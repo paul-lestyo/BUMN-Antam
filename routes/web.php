@@ -27,8 +27,11 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => 'role:admin
 	Route::resource('divisi', Admin\DivisiController::class);
 	Route::get('pengajuan-cuti', [Admin\PengajuanCutiController::class, 'index'])->name('pengajuan-cuti');
 
-	Route::get('pegawai', [Admin\PegawaiController::class, 'index'])->name('pegawai');
-	Route::get('pegawai/{id}', [Admin\PegawaiController::class, 'edit'])->name('pegawai.edit');
-	Route::post('pegawai/update/{id}', [Admin\PegawaiController::class, 'update'])->name('pegawai.update');
-	Route::delete('pegawai/destroy/{id}', [Admin\PegawaiController::class, 'destroy'])->name('pegawai.destroy');
+
+	Route::group(['as' => 'pegawai.', 'prefix' => 'pegawai'], function () {
+		Route::get('/', [Admin\PegawaiController::class, 'index'])->name('index');
+		Route::get('/{id}', [Admin\PegawaiController::class, 'edit'])->name('edit');
+		Route::post('/update/{id}', [Admin\PegawaiController::class, 'update'])->name('update');
+		Route::delete('/destroy/{id}', [Admin\PegawaiController::class, 'destroy'])->name('destroy');
+	});
 });
