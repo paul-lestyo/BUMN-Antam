@@ -62,12 +62,28 @@
                   </li>
                   
                   <li class="nav-item">
-                    <a href="{{ route('admin.pengajuan-cuti') }}" class="nav-link {{ Request::is('admin/pengajuan-cuti*')?'active':'' }}">
+                    <a href="{{ route('admin.pengajuan-cuti.index') }}" class="nav-link {{ Request::is('admin/pengajuan-cuti*')?'active':'' }}">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Pengajuan Cuti
+                            <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/admin/pengajuan-cuti/create"
+                                class="nav-link {{ Request::is('admin/pengajuan-cuti/create')?'active':'' }}">
+                                <i class="fa fa-plus nav-icon"></i>
+                                <p>Tambah Pengajuan</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/admin/pengajuan-cuti" class="nav-link {{ Request::is('admin/pengajuan-cuti')?'active':'' }}">
+                                <i class="fa fa-list nav-icon"></i>
+                                <p>List Pengajuan Cuti</p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
                   
                 <li class="nav-item">

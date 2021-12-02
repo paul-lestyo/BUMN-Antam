@@ -101,11 +101,10 @@
                                             <label for="divisi">Divisi</label>
                                             <select class="form-select" aria-label="Default select example" name="divisi_id" id="divisi_id">
                                                 
-                                                <option value="{{ $item->divisi->id }}" selected>{{ $item->divisi->nama_divisi }}</option>
                                                 @endforeach
 
                                                 @foreach ($divisi_pegawai as $divisi)
-                                                    <option value="{{ $divisi->id }}">{{ $divisi->nama_divisi }}</option>
+                                                    <option value="{{ $divisi->id }}" {{ $divisi->id == $item->divisi_id ? "selected" : "" }}>{{ $divisi->nama_divisi }}</option>
                                                 @endforeach
                                                 
                                               </select>

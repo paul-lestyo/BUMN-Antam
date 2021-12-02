@@ -52,29 +52,30 @@
                                     <th>Awal Cuti</th>
                                     <th>Akhir Cuti</th>
                                     <th>Keterangan</th>
+									<th>Aksi</th>
                                 </th>
                                 <tbody class="text-center">
                                     @foreach ($pengajuan_cuti as $item)
                                     <tr>
                                         <td class="font-weight-bold">{{ $loop->iteration }}.</td>
-                                        <td>{{ $item->pegawai_id}}</td>
-                                        <td></td>
+                                        <td>{{ $item->pegawai->nama_pegawai}}</td>
+                                        <td>{{ $item->pegawai->divisi->nama_divisi }}</td>
                                         <td>{{ $item->started_at}}</td>
                                         <td>{{ $item->end_at}}</td>
                                         <td>{{ $item->keterangan}}</td>
-                                        {{-- <td>{{ $item->created_at->format('d M Y') }}</td> --}}
-                                        {{-- <td>
-                                            <a href="{{ route('admin.divisi.edit',$item->id) }}" class="btn btn-sm btn-info my-1" title="Edit Data">
+                                        <td>
+                                            <a href="{{ route('admin.pengajuan-cuti.edit', $item->id) }}" class="btn btn-sm btn-info my-1" title="Edit Data">
                                                 <i class="fa fa-pen"></i>
                                             </a>
-                                            <form action="{{ route('admin.divisi.destroy',$item->id) }}" method="POST" class="d-inline-block">
+                                            <form action="{{ route('admin.pengajuan-cuti.destroy', $item->id) }}" method="POST" class="d-inline-block">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button class="btn btn-sm btn-danger my-1" title="Hapus Data" type="submit" onclick="return confirm('Apakah Anda Yakin Akan Menghapus Data Ini?');">
+
+                                                <button class="btn btn-sm btn-danger my-1" title="Hapus Data" type="submit" onclick="return confirm('Apakah Anda Yakin Akan Menghapus Data Ini?')">
                                                     <i class="fa fa-trash"></i>
                                                 </button>
                                             </form>
-                                        </td> --}}
+                                        </td>
                                     </tr>
                                     @endforeach
                                 </tbody>

@@ -27,6 +27,14 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => 'role:admin
 	Route::resource('divisi', Admin\DivisiController::class);
 	Route::get('pengajuan-cuti', [Admin\PengajuanCutiController::class, 'index'])->name('pengajuan-cuti');
 
+	Route::group(['as' => 'pengajuan-cuti.', 'prefix' => 'pengajuan-cuti'], function () {
+		Route::get('/', [Admin\PengajuanCutiController::class, 'index'])->name('index');
+		Route::get('/create', [Admin\PengajuanCutiController::class, 'create'])->name('create');
+		Route::post('/create', [Admin\PengajuanCutiController::class, 'store'])->name('store');
+		Route::get('/{id}', [Admin\PengajuanCutiController::class, 'edit'])->name('edit');
+		Route::post('/update/{id}', [Admin\PengajuanCutiController::class, 'update'])->name('update');
+		Route::delete('/destroy/{id}', [Admin\PengajuanCutiController::class, 'destroy'])->name('destroy');
+	});
 
 	Route::group(['as' => 'pegawai.', 'prefix' => 'pegawai'], function () {
 		Route::get('/', [Admin\PegawaiController::class, 'index'])->name('index');
