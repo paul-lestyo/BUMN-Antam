@@ -70,7 +70,12 @@
                     </a>
                 </li>
                   
-                
+                <li class="nav-item">
+                    <a href="/admin/pegawai" class="nav-link {{ Request::is('admin/pegawai*')?'active':'' }}">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>Pegawai</p>
+                    </a>
+                </li>
 
                   @elseif (auth()->user()->role_id == 1)
                   <li class="nav-item has-treeview {{ Request::is('pegawai/inbox*')?'menu-open':'' }}">

@@ -47,32 +47,39 @@
                             <table class="table">
                                 <thead class="thead-light text-center">
                                     <th>No</th>
+                                    <th>NIP</th>
                                     <th>Nama</th>
                                     <th>Alamat</th>
                                     <th>Nomor Telepon</th>
                                     <th>Golongan</th>
                                     <th>Divisi</th>
+                                    <th>Aksi</th>
                                 </th>
                                 <tbody class="text-center">
-                                    {{-- @foreach ($divisi as $item)
+                                    @foreach ($pegawai as $item)
                                     <tr>
                                         <td class="font-weight-bold">{{ $loop->iteration }}.</td>
-                                        <td>{{ $item->nama_divisi }}</td>
-                                        <td>{{ $item->created_at->format('d M Y') }}</td>
+                                        <td>{{ $item->nip }}</td>
+                                        <td>{{ $item->nama_pegawai }}</td>
+                                        <td>{{ $item->alamat_pegawai }}</td>
+                                        <td>{{ $item->no_telp }}</td>
+                                        <td>{{ $item->golongan }}</td>
+                                        <td>{{ $item->divisi->nama_divisi }}</td>
                                         <td>
-                                            <a href="{{ route('admin.divisi.edit',$item->id) }}" class="btn btn-sm btn-info my-1" title="Edit Data">
+                                            <a href="{{ route('admin.pegawai.edit', $item->id) }}" class="btn btn-sm btn-info my-1" title="Edit Data">
                                                 <i class="fa fa-pen"></i>
                                             </a>
-                                            <form action="{{ route('admin.divisi.destroy',$item->id) }}" method="POST" class="d-inline-block">
+                                            <form action="{{ route('admin.pegawai.destroy', $item->id) }}" method="POST" class="d-inline-block">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button class="btn btn-sm btn-danger my-1" title="Hapus Data" type="submit" onclick="return confirm('Apakah Anda Yakin Akan Menghapus Data Ini?');">
+
+                                                <button class="btn btn-sm btn-danger my-1" title="Hapus Data" type="submit" onclick="return confirm('Apakah Anda Yakin Akan Menghapus Data Ini?')">
                                                     <i class="fa fa-trash"></i>
                                                 </button>
                                             </form>
                                         </td>
                                     </tr>
-                                    @endforeach --}}
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
