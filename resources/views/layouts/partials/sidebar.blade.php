@@ -83,13 +83,32 @@
                         </li>
                     </ul>
                 </li>
-                  
+
                 <li class="nav-item">
-                    <a href="/admin/pegawai" class="nav-link {{ Request::is('admin/pegawai*')?'active':'' }}">
+                    <a href="{{ route('admin.pegawai.index') }}" class="nav-link {{ Request::is('admin/pegawai*')?'active':'' }}">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
-                        <p>Pegawai</p>
+                        <p>
+                            Pegawai
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
                     </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/admin/pegawai/create"
+                                class="nav-link {{ Request::is('admin/pegawai/create')?'active':'' }}">
+                                <i class="fa fa-plus nav-icon"></i>
+                                <p>Tambah Pegawai Baru</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/admin/pegawai" class="nav-link {{ Request::is('admin/pegawai')?'active':'' }}">
+                                <i class="fa fa-list nav-icon"></i>
+                                <p>Data Pegawai</p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
+
 
                   @elseif (auth()->user()->role_id == 1)
                   <li class="nav-item has-treeview {{ Request::is('pegawai/inbox*')?'menu-open':'' }}">
