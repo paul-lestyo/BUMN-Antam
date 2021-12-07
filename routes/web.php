@@ -23,7 +23,12 @@ Route::group(['as' => 'pegawai.', 'prefix' => 'pegawai', 'middleware' => 'role:p
 });
 
 Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => 'role:admin'], function () {
+	Route::get('about', [Admin\Page\AboutController::class, 'index'])->name('about.index');
+	Route::post('about', [Admin\Page\AboutController::class, 'update'])->name('about.update');
+
 	Route::get('dashboard', [Admin\DashboardController::class, 'index'])->name('dashboard');
+
+
 	Route::resource('divisi', Admin\DivisiController::class);
 	Route::get('pengajuan-cuti', [Admin\PengajuanCutiController::class, 'index'])->name('pengajuan-cuti');
 

@@ -23,8 +23,6 @@
           <nav class="mt-2">
               <ul class="nav nav-pills nav-sidebar nav-child-indent flex-column" data-widget="treeview" role="menu"
                   data-accordion="false">
-                  <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
                   <li class="nav-header">EXAMPLES</li>
                   <li class="nav-item">
                       <a href="{{ route('admin.dashboard') }}" class="nav-link">
@@ -119,6 +117,18 @@
                       </ul>
                   </li>
                   @endif
+				  
+				  @if (auth()->user()->role_id == 2)
+					<li class="nav-header">PAGES</li>
+					<li class="nav-item">
+						<a href="{{ route('admin.about.index') }}" class="nav-link">
+							<i class="nav-icon fas fa-tachometer-alt"></i>
+							<p>
+								About
+							</p>
+						</a>
+					</li>
+				  @endif
               </ul>
           </nav>
           <!-- /.sidebar-menu -->
