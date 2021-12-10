@@ -20,6 +20,8 @@ class CreateArticlesTable extends Migration
 			$table->text('deskripsi');
 			$table->string('author');
 			$table->string('category');
+			$table->string('slug');
+			$table->string('img')->default('/img/default.jpg');
 			$table->timestamps();
 		});
 	}

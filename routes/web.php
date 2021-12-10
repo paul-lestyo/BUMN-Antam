@@ -33,6 +33,15 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => 'role:admin
 	Route::get('contact', [Admin\Page\ContactController::class, 'index'])->name('contact.index');
 	Route::post('contact', [Admin\Page\ContactController::class, 'update'])->name('contact.update');
 
+	Route::group(['as' => 'article.', 'prefix' => 'article'], function () {
+		Route::get('/', [Admin\Page\ArticleController::class, 'index'])->name('index');
+		Route::get('/create', [Admin\Page\ArticleController::class, 'create'])->name('create');
+		Route::post('/create', [Admin\Page\ArticleController::class, 'store'])->name('store');
+		Route::get('/{id}', [Admin\Page\ArticleController::class, 'edit'])->name('edit');
+		Route::post('/update/{id}', [Admin\Page\ArticleController::class, 'update'])->name('update');
+		Route::delete('/destroy/{id}', [Admin\Page\ArticleController::class, 'destroy'])->name('destroy');
+	});
+
 	Route::get('dashboard', [Admin\DashboardController::class, 'index'])->name('dashboard');
 
 

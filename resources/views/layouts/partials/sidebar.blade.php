@@ -147,6 +147,30 @@
 							</p>
 						</a>
 					</li>
+					<li class="nav-item has-treeview {{ Request::is('admin/article*')?'menu-open':'' }}">
+						<a href="#" class="nav-link {{ Request::is('admin/article*')?'active':'' }}">
+							<i class="nav-icon fa fa-envelope"></i>
+							<p>
+								Artikel
+								<i class="right fas fa-angle-left"></i>
+							</p>
+						</a>
+						<ul class="nav nav-treeview">
+							<li class="nav-item">
+								<a href="/admin/article/create"
+									class="nav-link {{ Request::is('admin/article/create')?'active':'' }}">
+									<i class="fa fa-plus nav-icon"></i>
+									<p>Buat Artikel</p>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="/admin/article" class="nav-link {{ Request::is('admin/article')?'active':'' }}">
+									<i class="fa fa-list nav-icon"></i>
+									<p>Semua Artikel</p>
+								</a>
+							</li>
+						</ul>
+					</li>
 					<li class="nav-item">
 						<a href="{{ route('admin.contact.index') }}" class="nav-link">
 							<i class="nav-icon fas fa-tachometer-alt"></i>
