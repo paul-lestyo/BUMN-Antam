@@ -9,7 +9,7 @@ class Pegawai extends Model
 {
 	use HasFactory;
 
-	protected $guarded = ['id'];
+	protected $fillable = ['nip', 'nama_pegawai', 'alamat_pegawai', 'no_telp', 'golongan', 'divisi_id'];
 	protected $table = "pegawai";
 
 	public function divisi()
@@ -25,5 +25,5 @@ class Pegawai extends Model
 	public function inbox()
 	{
 		return $this->hasMany(Inbox::class);
-	}
+	}	
 }

@@ -43,6 +43,8 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => 'role:admin
 
 	Route::group(['as' => 'pegawai.', 'prefix' => 'pegawai'], function () {
 		Route::get('/', [Admin\PegawaiController::class, 'index'])->name('index');
+		Route::get('/create', [Admin\PegawaiController::class, 'create'])->name('create');
+		Route::post('/create', [Admin\PegawaiController::class, 'store'])->name('store');
 		Route::get('/{id}', [Admin\PegawaiController::class, 'edit'])->name('edit');
 		Route::post('/update/{id}', [Admin\PegawaiController::class, 'update'])->name('update');
 		Route::delete('/destroy/{id}', [Admin\PegawaiController::class, 'destroy'])->name('destroy');

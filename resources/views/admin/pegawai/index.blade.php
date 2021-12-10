@@ -42,6 +42,8 @@
                     <div class="card">
                         <div class="card-header d-flex justify-content-between align-items-center flex-row">
                             <h5 class="mb-0">Pegawai</h5>
+                            <a class="btn btn-sm btn-primary mr-0 ml-auto" href="/admin/pegawai/create"><i
+                                class="fa fa-plus"></i> Tambah Pegawai Baru</a>
                         </div>
                         <div class="card-body">
                             <table class="table">
