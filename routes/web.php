@@ -26,6 +26,9 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => 'role:admin
 	Route::get('about', [Admin\Page\AboutController::class, 'index'])->name('about.index');
 	Route::post('about', [Admin\Page\AboutController::class, 'update'])->name('about.update');
 
+	Route::get('contact', [Admin\Page\ContactController::class, 'index'])->name('contact.index');
+	Route::post('contact', [Admin\Page\ContactController::class, 'update'])->name('contact.update');
+
 	Route::get('dashboard', [Admin\DashboardController::class, 'index'])->name('dashboard');
 
 

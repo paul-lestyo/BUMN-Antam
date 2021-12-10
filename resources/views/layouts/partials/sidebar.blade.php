@@ -147,6 +147,14 @@
 							</p>
 						</a>
 					</li>
+					<li class="nav-item">
+						<a href="{{ route('admin.contact.index') }}" class="nav-link">
+							<i class="nav-icon fas fa-tachometer-alt"></i>
+							<p>
+								Contact
+							</p>
+						</a>
+					</li>
 				  @endif
               </ul>
           </nav>
