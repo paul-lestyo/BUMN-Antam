@@ -12,47 +12,51 @@ class HomeController extends Controller
 	public function index()
 	{
 		$data = [
-			'title'=>'Home | BUMN Antam'
+			'title' => 'Home | BUMN Antam'
 		];
 
-		return view('home',$data);
+		return view('home', $data);
 	}
 
-	public function about(){
+	public function about()
+	{
 		$data = [
-			'title'=>'About Us | BUMN Antam',
-			'about'=>About::first()
+			'title' => 'About Us | BUMN Antam',
+			'about' => About::first()
 		];
 
-		return view('about',$data);
+		return view('about', $data);
 	}
 
-	public function article(){
+	public function article()
+	{
 		$data = [
-			'title'=>'Article | BUMN Antam',
-			'articles'=>Article::orderBy('created_at','DESC')->paginate(9)
+			'title' => 'Article | BUMN Antam',
+			'articles' => Article::orderBy('created_at', 'DESC')->paginate(9)
 		];
 
-		return view('article',$data);
+		return view('article', $data);
 	}
 
-	public function detailArticle($id){
-		$article = Article::where('id',$id)->firstOrFail();
+	public function detailArticle($id)
+	{
+		$article = Article::where('id', $id)->firstOrFail();
 
 		$data = [
-			'title'=>"$article->judul | Article BUMN Antam",
-			'article'=>$article
+			'title' => "$article->judul | Article BUMN Antam",
+			'article' => $article
 		];
 
-		return view('detail-article',$data);
+		return view('detail-article', $data);
 	}
 
-	public function contact(){
+	public function contact()
+	{
 		$data = [
-			'title'=>'Contact Us | BUMN Antam',
-			'contacts'=>Contact::orderBy('name','ASC')->get()
+			'title' => 'Contact Us | BUMN Antam',
+			'contact' => Contact::first()
 		];
 
-		return view('contact',$data);
+		return view('contact', $data);
 	}
 }

@@ -1,6 +1,7 @@
 @extends('layouts.fe-template')
 
 @section('pageStyling')
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 <style>
     @import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap");
     @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
@@ -82,6 +83,10 @@
         color: #969696;
     }
 
+	iframe {
+		width: 100% !important; 
+	}
+
 </style>
 @endsection
 
@@ -91,20 +96,29 @@
     <div class="my-3 container-xxl">
         <div class="row text-center d-block mx-0">
             <h1>
-                Contact Us
+                Contact Us 
             </h1>
         </div>
-        <div class="row mx-0 mt-3 d-flex justify-content-between mx-3 mx-md-4">
-            @foreach ($contacts as $contact)
-            <div class="card rounded-lg">
+        <div class="row mt-4">
+			<div class="offset-md-1 col-md-4">
+				<div class="card rounded-lg">
                 <div class="card-body">
+                    <img src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-workly/img-2.png"
+                        alt="" class="rounded-circle img-fluid">
                     <div class="card-desc">
-                        <h4 class="card-title mb-1">{{ $contact->name }}</h4>
-                        <p class="card-text">{{ $contact->deskripsi }}</p>
+                        <h4 class="card-title my-3">PT ANTAM Tbk</h4>
+                        <p class="card-text">
+						{!!  $contact->deskripsi  !!}
+                        </p>
                     </div>
                 </div>
             </div>
-            @endforeach
+			</div>
+			<div class="col-md-7 mt-4">
+				<div class="container">
+					{!! $contact->iframe !!}
+				</div>
+			</div>
         </div>
     </div>
 

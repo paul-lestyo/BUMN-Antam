@@ -16,8 +16,8 @@ class CreateContactsTable extends Migration
 		Schema::dropIfExists('contacts');
 		Schema::create('contacts', function (Blueprint $table) {
 			$table->id();
-			$table->string('name');
-			$table->string('deskripsi');
+			$table->text('deskripsi');
+			$table->text('iframe');
 			$table->timestamps();
 		});
 	}
