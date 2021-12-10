@@ -20,6 +20,10 @@ Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::group(['as' => 'pegawai.', 'prefix' => 'pegawai', 'middleware' => 'role:pegawai'], function () {
 	Route::get('dashboard', [Pegawai\DashboardController::class, 'index'])->name('dashboard');
 	Route::resource('inbox', 'App\Http\Controllers\Pegawai\InboxController');
+
+	Route::get('pengajuan-cuti', [Pegawai\PengajuanCutiController::class, 'index'])->name('pengajuan-cuti.index');
+	Route::get('pengajuan-cuti/create', [Pegawai\PengajuanCutiController::class, 'create'])->name('pengajuan-cuti.create');
+	Route::post('pengajuan-cuti/create', [Pegawai\PengajuanCutiController::class, 'store'])->name('pengajuan-cuti.store');
 });
 
 Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => 'role:admin'], function () {
@@ -30,7 +34,6 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => 'role:admin
 
 
 	Route::resource('divisi', Admin\DivisiController::class);
-	Route::get('pengajuan-cuti', [Admin\PengajuanCutiController::class, 'index'])->name('pengajuan-cuti');
 
 	Route::group(['as' => 'pengajuan-cuti.', 'prefix' => 'pengajuan-cuti'], function () {
 		Route::get('/', [Admin\PengajuanCutiController::class, 'index'])->name('index');
