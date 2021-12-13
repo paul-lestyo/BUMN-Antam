@@ -19,6 +19,7 @@ class CreatePengajuanCutiTable extends Migration
 			$table->foreignId('pegawai_id');
 			$table->date('started_at');
 			$table->date('end_at');
+			$table->string('status');
 			$table->string('keterangan');
 			$table->timestamps();
 		});

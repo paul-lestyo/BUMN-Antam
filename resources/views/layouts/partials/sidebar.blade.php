@@ -23,6 +23,7 @@
           <nav class="mt-2">
               <ul class="nav nav-pills nav-sidebar nav-child-indent flex-column" data-widget="treeview" role="menu"
                   data-accordion="false">
+                  @if (auth()->user()->role_id == 2)
                   <li class="nav-header">EXAMPLES</li>
                   <li class="nav-item">
                       <a href="{{ route('admin.dashboard') }}" class="nav-link">
@@ -33,7 +34,6 @@
                       </a>
                   </li>
 
-                  @if (auth()->user()->role_id == 2)
                   <li class="nav-item has-treeview {{ Request::is('admin/divisi*')?'menu-open':'' }}">
                       <a href="#" class="nav-link {{ Request::is('admin/divisi*')?'active':'' }}">
                           <i class="nav-icon fa fa-sitemap"></i>
@@ -101,7 +101,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/admin/pegawai" class="nav-link {{ Request::is('admin/pegawai')?'active':'' }}">
+                            <a href="/admin/pegawai" class="nav-link {{ Request::is('admin/pegawai') ?'active':'' }}">
                                 <i class="fa fa-list nav-icon"></i>
                                 <p>Data Pegawai</p>
                             </a>
@@ -110,7 +110,42 @@
                 </li>
 
 
-                  @elseif (auth()->user()->role_id == 1)
+                    @elseif (auth()->user()->role_id == 1)
+                    <li class="nav-header">EXAMPLES</li>
+                    <li class="nav-item">
+                        <a href="{{ route('pegawai.dashboard') }}" class="nav-link">
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <p>
+                                Dashboard
+                            </p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item has-treeview {{ Request::is('pegawai/pengajuan-cuti*')?'menu-open':'' }}">
+                    <a href="#" class="nav-link {{ Request::is('pegawai/pengajuan-cuti*')?'active':'' }}">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Pengajuan Cuti
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/pegawai/pengajuan-cuti/create"
+                                class="nav-link {{ Request::is('pegawai/pengajuan-cuti/create')?'active':'' }}">
+                                <i class="fa fa-plus nav-icon"></i>
+                                <p>Ajukan Cuti</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/pegawai/pengajuan-cuti" class="nav-link {{ Request::is('pegawai/pengajuan-cuti')?'active':'' }}">
+                                <i class="fa fa-list nav-icon"></i>
+                                <p>Data Pegawai</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
                   <li class="nav-item has-treeview {{ Request::is('pegawai/inbox*')?'menu-open':'' }}">
                       <a href="#" class="nav-link {{ Request::is('pegawai/inbox*')?'active':'' }}">
                           <i class="nav-icon fa fa-envelope"></i>

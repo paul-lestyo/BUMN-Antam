@@ -43,6 +43,8 @@ class UsersTableSeeder extends Seeder
 			),
 		));
 
+		Pegawai::factory()->create(['user_id' => 1]);
+		Pegawai::factory()->create(['user_id' => 2]);
 		User::factory(15)->has(Pegawai::factory())->create(['role_id' => '1']);
 		User::factory(5)->create(['role_id' => '2']);
 	}
