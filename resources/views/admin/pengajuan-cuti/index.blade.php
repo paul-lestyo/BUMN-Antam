@@ -51,6 +51,7 @@
                                     <th>Divisi</th>
                                     <th>Awal Cuti</th>
                                     <th>Akhir Cuti</th>
+                                    <th>Status</th>
                                     <th>Keterangan</th>
 									<th>Aksi</th>
                                 </th>
@@ -62,6 +63,7 @@
                                         <td>{{ $item->pegawai->divisi->nama_divisi }}</td>
                                         <td>{{ $item->started_at}}</td>
                                         <td>{{ $item->end_at}}</td>
+                                        <td>{{ $item->status}}</td>
                                         <td>{{ $item->keterangan}}</td>
                                         <td>
                                             <a href="{{ route('admin.pengajuan-cuti.edit', $item->id) }}" class="btn btn-sm btn-info my-1" title="Edit Data">

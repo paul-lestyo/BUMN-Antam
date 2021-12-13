@@ -72,6 +72,18 @@
                                         @enderror
                                     </div>
                                     <div class="form-group col-md-12">
+                                        <label for="keterangan">Status</label>
+                                            <select class="form-control @error('status') is-invalid @enderror" id="status" name="status">
+                                                <option {{ ($pengajuan_cuti->status) == 'On Progress' ? 'selected' : '' }}  value="On Progress">On Progress</option>
+                                                <option {{ ($pengajuan_cuti->status) == 'Accepted' ? 'selected' : '' }}  value="Accepted">Accepted</option>
+                                            </select>
+                                        @error('status')
+                                          <div class="invalid-feedback">
+                                            {{ $message }}
+                                          </div>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group col-md-12">
                                         <label for="keterangan">Keterangan</label>
                                         <input type="text" class="form-control @error('keterangan') is-invalid @enderror" id="keterangan" name="keterangan" placeholder="Keterangan Cuti" value="{{ $pengajuan_cuti->keterangan }}">
                                         @error('keterangan')

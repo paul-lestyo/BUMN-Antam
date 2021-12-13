@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\PengajuanCuti;
 use App\Models\Pegawai;
 
+
 class PengajuanCutiController extends Controller
 {
     public function index(){
@@ -36,6 +37,7 @@ class PengajuanCutiController extends Controller
 			'end_at' => 'required|date',
 			'keterangan' => 'required'
 		]);
+		$validatedData['status'] = "On Progress";
 		PengajuanCuti::create($validatedData);
 
         return redirect()->route('admin.pengajuan-cuti.index')->with('sukses', 'Data Pengajuan Cuti Berhasil Ditambah!');
@@ -59,6 +61,7 @@ class PengajuanCutiController extends Controller
 			'pegawai_id' => 'required|exists:pegawai,id',
 			'started_at' => 'required|date',
 			'end_at' => 'required|date',
+			'status' => 'required',
 			'keterangan' => 'required'
 		]);
 
