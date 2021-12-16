@@ -24,6 +24,14 @@ Route::group(['as' => 'pegawai.', 'prefix' => 'pegawai', 'middleware' => 'role:p
 	Route::get('pengajuan-cuti', [Pegawai\PengajuanCutiController::class, 'index'])->name('pengajuan-cuti.index');
 	Route::get('pengajuan-cuti/create', [Pegawai\PengajuanCutiController::class, 'create'])->name('pengajuan-cuti.create');
 	Route::post('pengajuan-cuti/create', [Pegawai\PengajuanCutiController::class, 'store'])->name('pengajuan-cuti.store');
+
+	Route::group(['as' => 'presensi.', 'prefix' => 'presensi'], function() {
+		Route::get('/', [Pegawai\PresensiController::class, 'index'])->name('index');
+		Route::get('/prosesAbsen', [Pegawai\PresensiController::class, 'store'])->name('prosesAbsen');
+		Route::get('/isiJurnal', [Pegawai\PresensiController::class, 'edit'])->name('isiJurnal');
+		Route::post('/isiJurnal', [Pegawai\PresensiController::class, 'update'])->name('isiJurnal.post');
+	});
+	
 });
 
 Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => 'role:admin'], function () {

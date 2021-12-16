@@ -121,6 +121,15 @@
                         </a>
                     </li>
 
+                    <li class="nav-item">
+                        <a href="{{ route('pegawai.presensi.index') }}" class="nav-link">
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <p>
+                                Presensi
+                            </p>
+                        </a>
+                    </li>
+
                     <li class="nav-item has-treeview {{ Request::is('pegawai/pengajuan-cuti*')?'menu-open':'' }}">
                     <a href="#" class="nav-link {{ Request::is('pegawai/pengajuan-cuti*')?'active':'' }}">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
