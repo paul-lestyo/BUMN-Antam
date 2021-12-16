@@ -59,10 +59,19 @@
         width: 364px !important;
         margin-top: 56px !important;
         width: 25.25rem !important;
+		padding: 0 !important;
         border: unset;
         box-shadow: 0 .250rem .50rem rgba(0, 0, 0, .1) !important;
         text-decoration: none
     }
+
+	body .card img {
+		width: 100%;
+		height: 175px;
+		object-fit: cover;
+		object-position: center;
+		border-radius: 10px 10px 0 0;
+	}
 
     body .explain .card .card-body {
         padding: 32px 40px !important;
@@ -113,9 +122,12 @@
                 Our Article
             </h1>
         </div>
-        <div class="row mx-0 mt-3 d-flex justify-content-between mx-3 mx-md-4">
+        <div class="row mx-0 mt-3 d-flex justify-content-around mx-3 mx-md-4">
             @foreach ($articles as $article)
             <a class="card rounded-lg" href="{{ route('article.detail',$article->id) }}">
+				<div class="wrap-image">
+					<img class="img-fluid" src="{{ asset($article->img) }}">
+				</div>
                 <div class="card-body">
                     <div class="card-desc">
                         <div class="d-flex justify-content-between">

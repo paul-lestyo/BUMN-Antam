@@ -32,7 +32,7 @@ class HomeController extends Controller
 	{
 		$data = [
 			'title' => 'Article | BUMN Antam',
-			'articles' => Article::orderBy('created_at', 'DESC')->paginate(9)
+			'articles' => Article::orderBy('created_at', 'DESC')->paginate(6)
 		];
 
 		return view('article', $data);
@@ -41,7 +41,7 @@ class HomeController extends Controller
 	public function detailArticle($id)
 	{
 		$article = Article::where('id', $id)->firstOrFail();
-
+		$article->update(['view' => $article->view + 1]);
 		$data = [
 			'title' => "$article->judul | Article BUMN Antam",
 			'article' => $article
