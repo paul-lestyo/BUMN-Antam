@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
 		About::factory()->create();
 
 		Contact::factory()->create();
-	    $this->call(ArticlesTableSeeder::class);
-    }
+		$this->call(ArticlesTableSeeder::class);
+		$this->call(ViewTableSeeder::class);
+	}
 }

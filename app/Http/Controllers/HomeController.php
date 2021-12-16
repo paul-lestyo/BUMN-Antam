@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\View;
 use App\Models\About;
 use App\Models\Article;
 use App\Models\Contact;
@@ -41,7 +42,11 @@ class HomeController extends Controller
 	public function detailArticle($id)
 	{
 		$article = Article::where('id', $id)->firstOrFail();
-		$article->update(['view' => $article->view + 1]);
+		$view = View::firstOrNew(['article_id' => $article->id, 'date' => date('Y-m-d')]);
+		$view->count = $view->count + 1;
+		$view->date = date('Y-m-d');
+		$view->save();
+
 		$data = [
 			'title' => "$article->judul | Article BUMN Antam",
 			'article' => $article

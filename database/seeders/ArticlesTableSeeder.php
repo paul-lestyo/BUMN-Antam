@@ -30,7 +30,6 @@ class ArticlesTableSeeder extends Seeder
 				'img' => '/images/article/1639632358_5bc6dacfe191e-20181017134639-1.jpg',
 				'created_at' => '2021-12-15 21:11:39',
 				'updated_at' => '2021-12-15 21:25:58',
-				'view' => rand(1000, 10)
 			),
 			1 =>
 			array(
@@ -43,7 +42,6 @@ class ArticlesTableSeeder extends Seeder
 				'img' => '/images/article/1639631933_61b0015257240-20211208075026-2.jpg',
 				'created_at' => '2021-12-15 21:18:53',
 				'updated_at' => '2021-12-15 21:18:53',
-				'view' => rand(1000, 10)
 			),
 			2 =>
 			array(
@@ -56,7 +54,6 @@ class ArticlesTableSeeder extends Seeder
 				'img' => '/images/article/1639632027_61add24bb32c9-20211206160515-2-1.jpg',
 				'created_at' => '2021-12-15 21:20:27',
 				'updated_at' => '2021-12-15 21:20:27',
-				'view' => rand(1000, 10)
 			),
 			3 =>
 			array(
@@ -69,7 +66,6 @@ class ArticlesTableSeeder extends Seeder
 				'img' => '/images/article/1639632102_61a47bce5956b-20211129140550-2.jpg',
 				'created_at' => '2021-12-15 21:21:42',
 				'updated_at' => '2021-12-15 21:21:42',
-				'view' => rand(1000, 10)
 			),
 			4 =>
 			array(
@@ -82,7 +78,6 @@ class ArticlesTableSeeder extends Seeder
 				'img' => '/images/article/1639632153_618de8a24151b-20211112110802-2.jpg',
 				'created_at' => '2021-12-15 21:22:33',
 				'updated_at' => '2021-12-15 21:22:33',
-				'view' => rand(1000, 10)
 			),
 			5 =>
 			array(
@@ -95,7 +90,6 @@ class ArticlesTableSeeder extends Seeder
 				'img' => '/images/article/1639632198_616921aeb95dc-20211015133734-2-1.jpg',
 				'created_at' => '2021-12-15 21:23:18',
 				'updated_at' => '2021-12-15 21:23:18',
-				'view' => rand(1000, 10)
 			),
 			6 =>
 			array(
@@ -108,7 +102,6 @@ class ArticlesTableSeeder extends Seeder
 				'img' => '/images/article/1639632283_615a751f29865-20211004102935-2-1.jpg',
 				'created_at' => '2021-12-15 21:24:43',
 				'updated_at' => '2021-12-15 21:24:43',
-				'view' => rand(1000, 10)
 			),
 			7 =>
 			array(
@@ -121,7 +114,6 @@ class ArticlesTableSeeder extends Seeder
 				'img' => '/images/article/1639632321_6152a66ebaa69-20210928122150-2.jpg',
 				'created_at' => '2021-12-15 21:25:21',
 				'updated_at' => '2021-12-15 21:25:21',
-				'view' => rand(1000, 10)
 			),
 		));
 	}

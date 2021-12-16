@@ -38,9 +38,9 @@ Dashboard - Admin BUMN Antam
 				<!-- small box -->
 				<div class="small-box bg-info">
 				  <div class="inner">
-					<h3>150</h3>
+					<h3>{{ $pegawai_count }}</h3>
 	
-					<p>New Orders</p>
+					<p>Jumlah Pegawai</p>
 				  </div>
 				  <div class="icon">
 					<i class="ion ion-bag"></i>
@@ -53,9 +53,9 @@ Dashboard - Admin BUMN Antam
 				<!-- small box -->
 				<div class="small-box bg-success">
 				  <div class="inner">
-					<h3>53<sup style="font-size: 20px">%</sup></h3>
+					<h3>{{ $divisi_count }}</h3>
 	
-					<p>Bounce Rate</p>
+					<p>Jumlah Divisi</p>
 				  </div>
 				  <div class="icon">
 					<i class="ion ion-stats-bars"></i>
@@ -68,9 +68,9 @@ Dashboard - Admin BUMN Antam
 				<!-- small box -->
 				<div class="small-box bg-warning">
 				  <div class="inner">
-					<h3>44</h3>
+					<h3>{{ $article_count }}</h3>
 	
-					<p>User Registrations</p>
+					<p>Jumlah Artikel</p>
 				  </div>
 				  <div class="icon">
 					<i class="ion ion-person-add"></i>
@@ -83,9 +83,9 @@ Dashboard - Admin BUMN Antam
 				<!-- small box -->
 				<div class="small-box bg-danger">
 				  <div class="inner">
-					<h3>65</h3>
+					<h3>{{ $view_count }}</h3>
 	
-					<p>Unique Visitors</p>
+					<p>Jumlah Pengunjung</p>
 				  </div>
 				  <div class="icon">
 					<i class="ion ion-pie-graph"></i>
@@ -104,7 +104,7 @@ Dashboard - Admin BUMN Antam
 					<div class="card-header">
 					  <h3 class="card-title">
 						<i class="fas fa-chart-pie mr-1"></i>
-						Sales
+						Pengunjung Tiap Bulan
 					  </h3>
 					  <div class="card-tools">
 						<ul class="nav nav-pills ml-auto">
@@ -275,29 +275,18 @@ Dashboard - Admin BUMN Antam
 		// $('#revenue-chart').get(0).getContext('2d');
 
 		var salesChartData = {
-		labels: ["January", "February", "March", "April", "May", "June", "July"],
+		labels: {!! $date !!},
 		datasets: [
 			{
-			label: "Digital Goods",
+			label: "Pengunjung",
 			backgroundColor: "rgba(60,141,188,0.9)",
 			borderColor: "rgba(60,141,188,0.8)",
-			pointRadius: false,
+			pointRadius: true,
 			pointColor: "#3b8bba",
 			pointStrokeColor: "rgba(60,141,188,1)",
 			pointHighlightFill: "#fff",
 			pointHighlightStroke: "rgba(60,141,188,1)",
-			data: [28, 48, 40, 19, 86, 27, 90],
-			},
-			{
-			label: "Electronics",
-			backgroundColor: "rgba(210, 214, 222, 1)",
-			borderColor: "rgba(210, 214, 222, 1)",
-			pointRadius: false,
-			pointColor: "rgba(210, 214, 222, 1)",
-			pointStrokeColor: "#c1c7d1",
-			pointHighlightFill: "#fff",
-			pointHighlightStroke: "rgba(220,220,220,1)",
-			data: [65, 59, 80, 81, 56, 55, 40],
+			data: {!! $view !!},
 			},
 		],
 		};
@@ -338,11 +327,11 @@ Dashboard - Admin BUMN Antam
 		// Donut Chart
 		var pieChartCanvas = $("#sales-chart-canvas").get(0).getContext("2d");
 		var pieData = {
-		labels: ["Instore Sales", "Download Sales", "Mail-Order Sales"],
+		labels: {!! $date !!},
 		datasets: [
 			{
-			data: [30, 12, 20],
-			backgroundColor: ["#f56954", "#00a65a", "#f39c12"],
+			data: {!! $view !!},
+			backgroundColor: ["#f56954", "#00a65a", "#f39c12",'green','red','yellow','aqua','grey','orange','blue','black','purple'],
 			},
 		],
 		};

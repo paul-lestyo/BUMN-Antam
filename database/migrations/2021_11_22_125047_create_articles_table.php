@@ -22,7 +22,6 @@ class CreateArticlesTable extends Migration
 			$table->string('category');
 			$table->string('slug');
 			$table->string('img')->default('/img/default.jpg');
-			$table->integer('view')->default(0);
 			$table->timestamps();
 		});
 	}
