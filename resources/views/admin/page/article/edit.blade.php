@@ -6,7 +6,7 @@
 
 @push('css')
 	<!-- summernote -->
-	<link rel="stylesheet" href="{{ secure_asset('plugins/summernote/summernote-bs4.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.min.css') }}">
 @endpush
 
 @section('content')
