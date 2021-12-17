@@ -23,7 +23,6 @@ class UsersTableSeeder extends Seeder
 		\DB::table('users')->insert(array(
 			0 =>
 			array(
-				'id' => 1,
 				'username' => 'pegawai',
 				'email' => 'pegawai@gmail.com',
 				'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
@@ -33,7 +32,6 @@ class UsersTableSeeder extends Seeder
 			),
 			1 =>
 			array(
-				'id' => 2,
 				'username' => 'admin',
 				'email' => 'admin@gmail.com',
 				'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
