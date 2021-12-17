@@ -48,10 +48,10 @@
                                 <thead class="thead-light text-center">
                                     <th>No</th>
                                     <th>Subject Pesan</th>
-                                    <th>Nama Pegawai</th>
-                                    <th>Dibuat Pada</th>    
-									<th>Status</th>    
-                                    <th>Aksi</th>
+                                    <th>Pengirim</th>
+									<th>Penerima</th>
+                                    <th>Dibuat Pada</th>
+									<th>Action</th>
                                 </thead>
                                 <tbody class="text-center">
                                     @foreach ($pesan as $item)
@@ -59,15 +59,11 @@
                                         <td class="font-weight-bold">{{ $loop->iteration }}.</td>
                                         <td>{{ $item->subject }}</td>
                                         <td>{{ $item->dataPengirim->nama_pegawai }}</td>
+										<td>{{ $item->dataPenerima->nama_pegawai }}</td>
                                         <td>{{ $item->created_at->format('d M Y. H:i:s') }} WIB</td>
-										<td>{{ $item->hasReply($item->id) ? "Sudah Dibalas" : "Menunggu" }}</td>
-                                        <td>
-                                        @if(!$item->hasReply($item->id))
-                                            <a href="{{ route('admin.inbox.reply',$item->id) }}" class="btn btn-sm btn-primary my-1" title="Balas Pesan"> <i class="fas fa-reply"></i></a>
-                                        @endif
-                                            <a href="{{ route('admin.inbox.show',$item->id) }}" class="btn btn-sm btn-dark my-1" title="Lihat Data"> <i class="fa fa-eye"></i></a>
-                                        
-                                        </td>
+										<td>
+											<a href="{{ route('admin.inbox.showSend',$item->id) }}" class="btn btn-sm btn-dark my-1" title="Lihat Data"> <i class="fa fa-eye"></i></a>
+										</td>
                                     </tr>
                                     @endforeach
                                 </tbody>

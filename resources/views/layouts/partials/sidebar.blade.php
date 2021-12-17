@@ -24,7 +24,7 @@
               <ul class="nav nav-pills nav-sidebar nav-child-indent flex-column" data-widget="treeview" role="menu"
                   data-accordion="false">
                   @if (auth()->user()->role_id == 2)
-                  <li class="nav-header">EXAMPLES</li>
+                  <li class="nav-header">ADMIN</li>
                   <li class="nav-item">
                       <a href="{{ route('admin.dashboard') }}" class="nav-link">
                           <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -104,6 +104,30 @@
                             <a href="/admin/pegawai" class="nav-link {{ Request::is('admin/pegawai') ?'active':'' }}">
                                 <i class="fa fa-list nav-icon"></i>
                                 <p>Data Pegawai</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+				<li class="nav-item {{ Request::is('admin/inbox*')?'menu-open':'' }}">
+                    <a href="{{ route('admin.inbox.index') }}" class="nav-link {{ Request::is('admin/inbox*')?'active':'' }}">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Inbox
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/admin/inbox" class="nav-link {{ Request::is('admin/inbox') ?'active':'' }}">
+                                <i class="fa fa-list nav-icon"></i>
+                                <p>Inbox Masuk</p>
+                            </a>
+                        </li>
+						<li class="nav-item">
+                            <a href="/admin/inbox/send" class="nav-link {{ Request::is('admin/inbox/send') ?'active':'' }}">
+                                <i class="fa fa-list nav-icon"></i>
+                                <p>Inbox Terkirim</p>
                             </a>
                         </li>
                     </ul>

@@ -25,7 +25,7 @@ Route::group(['as' => 'pegawai.', 'prefix' => 'pegawai', 'middleware' => 'role:p
 	Route::get('pengajuan-cuti/create', [Pegawai\PengajuanCutiController::class, 'create'])->name('pengajuan-cuti.create');
 	Route::post('pengajuan-cuti/create', [Pegawai\PengajuanCutiController::class, 'store'])->name('pengajuan-cuti.store');
 
-	Route::group(['as' => 'presensi.', 'prefix' => 'presensi'], function() {
+	Route::group(['as' => 'presensi.', 'prefix' => 'presensi'], function () {
 		Route::get('/', [Pegawai\PresensiController::class, 'index'])->name('index');
 		Route::get('/prosesAbsen', [Pegawai\PresensiController::class, 'store'])->name('prosesAbsen');
 		Route::get('/isiJurnal', [Pegawai\PresensiController::class, 'edit'])->name('isiJurnal');
@@ -76,6 +76,8 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => 'role:admin
 
 	Route::group(['as' => 'inbox.', 'prefix' => 'inbox'], function () {
 		Route::get('/', [Admin\InboxController::class, 'index'])->name('index');
+		Route::get('/send', [Admin\InboxController::class, 'send'])->name('send');
+		Route::get('/showSend/{id}', [Admin\InboxController::class, 'showSend'])->name('showSend');
 		Route::get('/reply/{id}', [Admin\InboxController::class, 'create'])->name('reply');
 		Route::post('/reply/{id}', [Admin\InboxController::class, 'store'])->name('store');
 		Route::get('/{id}', [Admin\InboxController::class, 'show'])->name('show');
