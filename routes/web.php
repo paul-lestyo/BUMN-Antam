@@ -72,4 +72,11 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => 'role:admin
 		Route::post('/update/{id}', [Admin\PegawaiController::class, 'update'])->name('update');
 		Route::delete('/destroy/{id}', [Admin\PegawaiController::class, 'destroy'])->name('destroy');
 	});
+
+	Route::group(['as' => 'inbox.', 'prefix' => 'inbox'], function () {
+		Route::get('/', [Admin\InboxController::class, 'index'])->name('index');
+		Route::get('/reply/{id}', [Admin\InboxController::class, 'create'])->name('reply');
+		Route::post('/reply/{id}', [Admin\InboxController::class, 'store'])->name('store');
+		Route::get('/{id}', [Admin\InboxController::class, 'show'])->name('show');
+	});
 });

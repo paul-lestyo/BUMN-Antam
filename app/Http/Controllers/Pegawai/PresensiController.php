@@ -34,4 +34,29 @@ class PresensiController extends Controller
 
         return redirect()->route('pegawai.presensi.index');
     }
+
+    public function edit()
+    {
+        $data = [
+            'title' => "Jurnal Harian Pegawai - BUMN ANTAM"
+        ];
+
+        return view("pegawai.presensi.jurnal", $data);
+    }
+
+    public function update(Request $request)
+    {
+        $validatedData = $request->validate([
+            'jurnal' => 'required'
+        ]);
+
+        $presensi = Presensi::where('pegawai_id', Auth::user()->pegawai->id)
+                    ->whereDate('created_at', Carbon::today())->first();
+
+        if($presensi) {
+            $presensi->where('pegawai_id', Auth::user()->pegawai->id)->update($validatedData);
+        }
+
+        return redirect()->route('pegawai.presensi.index');
+    }
 }
