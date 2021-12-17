@@ -54,7 +54,7 @@ class PresensiController extends Controller
                     ->whereDate('created_at', Carbon::today())->first();
 
         if($presensi) {
-            $presensi->where('pegawai_id', Auth::user()->pegawai->id)->update($validatedData);
+            $presensi->update($validatedData);
         }
 
         return redirect()->route('pegawai.presensi.index');

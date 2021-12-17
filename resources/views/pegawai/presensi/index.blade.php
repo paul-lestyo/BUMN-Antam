@@ -105,7 +105,7 @@ Dashboard - Admin BUMN Antam
                                                 <td class="font-weight-bold">{{ $loop->iteration }}.</td>
                                                 <td>{{ $item->created_at->format('d F Y') }}</td>
                                                 <td>Hadir</td>
-                                                <td>{{ $item->jurnal}}</td>
+                                                <td>{!! $item->jurnal!!}</td>
                                             </tr>
                                             @endforeach
                                         </tbody>
