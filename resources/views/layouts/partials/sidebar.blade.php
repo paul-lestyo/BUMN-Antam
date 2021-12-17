@@ -198,9 +198,15 @@
                           <li class="nav-item">
                               <a href="/pegawai/inbox" class="nav-link {{ Request::is('pegawai/inbox')?'active':'' }}">
                                   <i class="fa fa-list nav-icon"></i>
-                                  <p>Semua Pesan</p>
+                                  <p>Pesan Terkirim</p>
                               </a>
                           </li>
+						  <li class="nav-item">
+							<a href="/pegawai/inbox/pesanMasuk" class="nav-link {{ Request::is('pegawai/inbox/pesanMasuk')?'active':'' }}">
+								<i class="fa fa-list nav-icon"></i>
+								<p>Pesan Masuk</p>
+							</a>
+						</li>
                       </ul>
                   </li>
                   @endif

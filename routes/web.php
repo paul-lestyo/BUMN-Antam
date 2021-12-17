@@ -5,7 +5,6 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin;
 use App\Http\Controllers\Pegawai;
-use App\Models\Role;
 
 Route::get('/login', [AuthController::class, 'index'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.post');
@@ -19,6 +18,8 @@ Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 
 Route::group(['as' => 'pegawai.', 'prefix' => 'pegawai', 'middleware' => 'role:pegawai'], function () {
 	Route::get('dashboard', [Pegawai\DashboardController::class, 'index'])->name('dashboard');
+	Route::get('inbox/pesanMasuk', [Pegawai\InboxController::class, 'pesanMasuk'])->name('pesanMasuk');
+	Route::get('inbox/showPesan/{id}', [Pegawai\InboxController::class, 'showPesan'])->name('showPesan');
 	Route::resource('inbox', 'App\Http\Controllers\Pegawai\InboxController');
 
 	Route::get('pengajuan-cuti', [Pegawai\PengajuanCutiController::class, 'index'])->name('pengajuan-cuti.index');
