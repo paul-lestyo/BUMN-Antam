@@ -40,7 +40,7 @@
               <div class="row">
                 <div class="col-12">
                   <h4>
-                    <i class="fas fa-globe"></i> PT ANEKA TAMBANG (ANTAM) TBK
+                    <i class="fas fa-globe"></i> AdminLTE, Inc.
                     <small class="float-right">Date: 2/10/2014</small>
                   </h4>
                 </div>
@@ -48,18 +48,18 @@
               </div>
               <!-- info row -->
               <div class="row invoice-info">
-                <div class="col-sm-4 invoice-col">
+                <div class="col-sm-6 invoice-col">
                   From
                   <address>
-                    <strong>Admin, TBK.</strong><br>
-                    Jl. Letjen. T.B. Simatupang No. 1<br>
-                    Lingkar Selatan, Tanjung Barat<br>
-                    Jakarta 12530, Indonesia<br>
-                    corsec@antam.com
+                    <strong>Admin, Inc.</strong><br>
+                    795 Folsom Ave, Suite 600<br>
+                    San Francisco, CA 94107<br>
+                    Phone: (804) 123-5432<br>
+                    Email: info@almasaeedstudio.com
                   </address>
                 </div>
                 <!-- /.col -->
-                <div class="col-sm-4 invoice-col">
+                <div class="col-sm-6 invoice-col">
                   To
                   <address>
                     <strong>John Doe</strong><br>
@@ -69,6 +69,8 @@
                     Email: john.doe@example.com
                   </address>
                 </div>
+                
+              </div>
               <!-- /.row -->
 
               <!-- Table row -->
@@ -80,35 +82,35 @@
                       <th>No</th>
                       <th>Gaji Pokok</th>
                       <th>Persentase Kehadiran</th>
-                      <th>Total Gaji</th>
+                      <th>Gaji Total</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>Call of Duty</td>
-                      <td>455-981-221</td>
-                      <td>100000000</td>
-                    </tr>
+                    {{-- <tr>
+                      @foreach ($cek_gaji as $item)
+                      <td class="font-weight-bold">{{ $loop->iteration }}.</td>
+                      <td>{{ $item->gaji_pokok}}</td>
+                      <td>{{ $item->presensi}}</td>
+                      <td>{{ $item->gaji_total}}</td>
+                    </tr> --}}
                     </tbody>
                   </table>
                 </div>
-                <!-- /.col -->
               </div>
-              <!-- /.row -->
 
               <!-- this row will not appear when printing -->
               <div class="row no-print">
                 <div class="col-12">
-                  <a href="cek-gaji-print.html" target="_blank" class="btn btn-default"><i class="fas fa-print"></i> Print</a>
-
+                  <a href="invoice-print.html" target="_blank" class="btn btn-default"><i class="fas fa-print"></i> Print</a>
+                  <button type="button" class="btn btn-success float-right"><i class="far fa-credit-card"></i> Submit
+                    Payment
+                  </button>
                   <button type="button" class="btn btn-primary float-right" style="margin-right: 5px;">
                     <i class="fas fa-download"></i> Generate PDF
                   </button>
                 </div>
               </div>
             </div>
-            <!-- /.invoice -->
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
