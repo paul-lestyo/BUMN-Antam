@@ -24,6 +24,6 @@ class Inbox extends Model
     public function hasReply($id) 
     {
         $inbox = Inbox::findOrFail($id);
-        return $this->where('penerima', $inbox->id)->where('subject', 'LIKE', "[ Reply | $inbox->subject ]%")->first();
+        return $this->where('penerima', $inbox->pengirim)->where('subject', 'LIKE', "[ Reply | $inbox->subject ]%")->first();
     }
 }

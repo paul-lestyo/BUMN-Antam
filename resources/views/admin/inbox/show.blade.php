@@ -36,8 +36,10 @@
                     <div class="card">
                         <div class="card-header d-flex justify-content-between align-items-center flex-row">
                             <h5 class="mb-0">Data Pesan</h5>
-							<a class="btn btn-sm btn-primary mr-0 ml-auto" href="{{ route('admin.inbox.reply', $inbox->id) }}"><i
-                                    class="fas fa-reply mr-1"></i> Balas Pesan</a>
+							
+                                @if (!$inbox->hasReply($inbox->id))
+                                    <a class="btn btn-sm btn-primary mr-0 ml-auto" href="{{ route('admin.inbox.reply', $inbox->id) }}"><i class="fas fa-reply mr-1"></i> Balas Pesan</a>
+                                @endif
                         </div>
                         <div class="card-body">
                             <div class="d-flex justify-content-between border-bottom mb-2">

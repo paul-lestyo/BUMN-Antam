@@ -6,6 +6,7 @@ use App\Models\About;
 use Illuminate\Database\Seeder;
 use App\Models\Article;
 use App\Models\Contact;
+use App\Models\Presensi;
 
 class DatabaseSeeder extends Seeder
 {
@@ -27,5 +28,6 @@ class DatabaseSeeder extends Seeder
 		Contact::factory()->create();
 		$this->call(ArticlesTableSeeder::class);
 		$this->call(ViewTableSeeder::class);
+		$this->call(PresensiTableSeeder::class);
 	}
 }
