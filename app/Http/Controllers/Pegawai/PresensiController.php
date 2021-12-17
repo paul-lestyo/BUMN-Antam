@@ -10,53 +10,53 @@ use Illuminate\Support\Facades\Auth;
 
 class PresensiController extends Controller
 {
-    
-    public function index()
-    {   
-        $presensi = Presensi::where('pegawai_id', Auth::user()->pegawai->id);
-        $data = [
-            'title' => "Presensi Pegawai - BUMN ANTAM",
-            'pegawai' => $presensi->get(),
-            'presensi' => $presensi->whereDate('created_at', Carbon::today())->first()
-        ];
 
-        
-        return view("pegawai.presensi.index", $data);
-    }
+	public function index()
+	{
+		$presensi = Presensi::where('pegawai_id', Auth::user()->pegawai->id)->orderBy('created_at', 'DESC');
+		$data = [
+			'title' => "Presensi Pegawai - BUMN ANTAM",
+			'pegawai' => $presensi->get(),
+			'presensi' => $presensi->whereDate('created_at', Carbon::today())->first()
+		];
 
-    public function store()
-    {   
-        $presensi = Presensi::where('pegawai_id', Auth::user()->pegawai->id)
-                ->whereDate('created_at', Carbon::today())->first();
-        if(!$presensi) {
-            Presensi::create(['pegawai_id' => Auth::user()->pegawai->id]);
-        }
 
-        return redirect()->route('pegawai.presensi.index');
-    }
+		return view("pegawai.presensi.index", $data);
+	}
 
-    public function edit()
-    {
-        $data = [
-            'title' => "Jurnal Harian Pegawai - BUMN ANTAM"
-        ];
+	public function store()
+	{
+		$presensi = Presensi::where('pegawai_id', Auth::user()->pegawai->id)
+			->whereDate('created_at', Carbon::today())->first();
+		if (!$presensi) {
+			Presensi::create(['pegawai_id' => Auth::user()->pegawai->id]);
+		}
 
-        return view("pegawai.presensi.jurnal", $data);
-    }
+		return redirect()->route('pegawai.presensi.index');
+	}
 
-    public function update(Request $request)
-    {
-        $validatedData = $request->validate([
-            'jurnal' => 'required'
-        ]);
+	public function edit()
+	{
+		$data = [
+			'title' => "Jurnal Harian Pegawai - BUMN ANTAM"
+		];
 
-        $presensi = Presensi::where('pegawai_id', Auth::user()->pegawai->id)
-                    ->whereDate('created_at', Carbon::today())->first();
+		return view("pegawai.presensi.jurnal", $data);
+	}
 
-        if($presensi) {
-            $presensi->update($validatedData);
-        }
+	public function update(Request $request)
+	{
+		$validatedData = $request->validate([
+			'jurnal' => 'required'
+		]);
 
-        return redirect()->route('pegawai.presensi.index');
-    }
+		$presensi = Presensi::where('pegawai_id', Auth::user()->pegawai->id)
+			->whereDate('created_at', Carbon::today())->first();
+
+		if ($presensi) {
+			$presensi->update($validatedData);
+		}
+
+		return redirect()->route('pegawai.presensi.index');
+	}
 }
