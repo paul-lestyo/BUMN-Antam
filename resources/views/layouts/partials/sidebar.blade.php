@@ -135,7 +135,7 @@
 
 
                     @elseif (auth()->user()->role_id == 1)
-                    <li class="nav-header">EXAMPLES</li>
+                    <li class="nav-header">PEGAWAI</li>
                     <li class="nav-item">
                         <a href="{{ route('pegawai.dashboard') }}" class="nav-link">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -146,7 +146,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="{{ route('pegawai.presensi.index') }}" class="nav-link">
+                        <a href="{{ route('pegawai.presensi.index') }}" class="nav-link {{ Request::is('pegawai/presensi*') ?'active':'' }}">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
                             <p>
                                 Presensi
@@ -198,9 +198,15 @@
                           <li class="nav-item">
                               <a href="/pegawai/inbox" class="nav-link {{ Request::is('pegawai/inbox')?'active':'' }}">
                                   <i class="fa fa-list nav-icon"></i>
-                                  <p>Semua Pesan</p>
+                                  <p>Pesan Terkirim</p>
                               </a>
                           </li>
+						  <li class="nav-item">
+							<a href="/pegawai/inbox/pesanMasuk" class="nav-link {{ Request::is('pegawai/inbox/pesanMasuk')?'active':'' }}">
+								<i class="fa fa-list nav-icon"></i>
+								<p>Pesan Masuk</p>
+							</a>
+						</li>
                       </ul>
                   </li>
                   @endif
