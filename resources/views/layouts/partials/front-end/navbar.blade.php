@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light">
     <a href="{{ route('home') }}">
         <img style="margin-right: 0.75rem;max-height:40px;"
-            src="{{ asset('dist/img/BUMNAntamLogo.png') }}" alt="" />
+            src="{{ secure_asset('dist/img/BUMNAntamLogo.png') }}" alt="" />
     </a>
     <button class="navbar-toggler border-0" type="button" data-bs-toggle="modal" data-bs-target="#targetModal-item">
         <span class="navbar-toggler-icon"></span>
@@ -14,7 +14,7 @@
                 <div class="modal-header border-0" style="padding: 2rem; padding-bottom: 0">
                     <a class="modal-title" id="targetModalLabel">
                         <img style="margin-top: 0.5rem;max-height:40px;"
-                            src="{{ asset('dist/img/BUMNAntamLogo.png') }}"
+                            src="{{ secure_asset('dist/img/BUMNAntamLogo.png') }}"
                             alt="" />
                     </a>
                     <button type="button" class="close btn-close text-white" data-bs-dismiss="modal"

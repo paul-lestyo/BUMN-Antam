@@ -5,7 +5,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="">
                         <div class="list-space">
-                            <img src="{{ asset('dist/img/BUMNAntamLogo.png') }}" alt="" style="max-height:80px;"/>
+                            <img src="{{ secure_asset('dist/img/BUMNAntamLogo.png') }}" alt="" style="max-height:80px;"/>
                         </div>
                         <nav class="list-unstyled">
                             <li class="list-space">

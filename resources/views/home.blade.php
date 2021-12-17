@@ -1,7 +1,7 @@
 @extends('layouts.fe-template')
 
 @section('pageStyling')
-<link rel="stylesheet" href="{{ asset('dist/css/fe/header.css') }}">
+<link rel="stylesheet" href="{{ secure_asset('dist/css/fe/header.css') }}">
 
 <style>
     /* why choose us */
@@ -67,7 +67,7 @@
         <!-- Right Column -->
         <div class="col-lg-6 justify-content-center justify-content-lg-start text-center pe-0">
             <img class="d-lg-block d-none hero-right w-100"
-                src="{{ asset('dist/img/gold-bars.png') }}"
+                src="{{ secure_asset('dist/img/gold-bars.png') }}"
                 alt="" />
         </div>
     </div>

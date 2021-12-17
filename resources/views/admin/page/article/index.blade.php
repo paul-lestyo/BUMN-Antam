@@ -64,7 +64,7 @@
                                         <td>{{ Str::limit($item->deskripsi, 50, $end='...') }}</td>
                                         <td>{{ $item->author }}</td>
                                         <td>{{ $item->category }}</td>
-                                        <td><img src="{{ asset($item->img) }}" alt="{{ $item->judul }}" style="width: 100px"></td>
+                                        <td><img src="{{ secure_asset($item->img) }}" alt="{{ $item->judul }}" style="width: 100px"></td>
                                         <td>
                                             <a href="{{ route('admin.article.edit', $item->id) }}" class="btn btn-sm btn-info my-1" title="Edit Data">
                                                 <i class="fa fa-pen"></i>

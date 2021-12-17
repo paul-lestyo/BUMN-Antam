@@ -126,7 +126,7 @@
             @foreach ($articles as $article)
             <a class="card rounded-lg" href="{{ route('article.detail',$article->id) }}">
 				<div class="wrap-image">
-					<img class="img-fluid" src="{{ asset($article->img) }}">
+					<img class="img-fluid" src="{{ secure_asset($article->img) }}">
 				</div>
                 <div class="card-body">
                     <div class="card-desc">

@@ -267,7 +267,7 @@ Dashboard - Admin BUMN Antam
 
 @push('scripts')
 	  <!-- ChartJS -->
-	<script src="{{ asset('plugins/chart.js/Chart.min.js') }}"></script>
+	<script src="{{ secure_asset('plugins/chart.js/Chart.min.js') }}"></script>
 	<script>
 		var salesChartCanvas = document
 		.getElementById("revenue-chart-canvas")

@@ -6,7 +6,7 @@
 
 @push('css')
 	<!-- summernote -->
-	<link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.min.css') }}">
+	<link rel="stylesheet" href="{{ secure_asset('plugins/summernote/summernote-bs4.min.css') }}">
 @endpush
 
 
@@ -94,7 +94,7 @@
 
 @push('scripts')
 <!-- Summernote -->
-<script src="{{ asset('plugins/summernote/summernote-bs4.min.js') }}"></script>
+<script src="{{ secure_asset('plugins/summernote/summernote-bs4.min.js') }}"></script>
 <script>
 	$(function () {
     // Summernote
