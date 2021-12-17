@@ -31,7 +31,8 @@ Route::group(['as' => 'pegawai.', 'prefix' => 'pegawai', 'middleware' => 'role:p
 		Route::get('/isiJurnal', [Pegawai\PresensiController::class, 'edit'])->name('isiJurnal');
 		Route::post('/isiJurnal', [Pegawai\PresensiController::class, 'update'])->name('isiJurnal.post');
 	});
-	
+
+	Route::get('cek-gaji', [Pegawai\CekGajiController::class, 'index'])->name('cek-gaji.index');
 });
 
 Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => 'role:admin'], function () {
