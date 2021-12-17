@@ -12,6 +12,7 @@ class CekGajiController extends Controller
     public function index(){
         $data = [
             'title'=>'Cek Gaji - Pegawai BUMN Antam',
+            'cek_gaji'=>CekGaji::where("pegawai_id", Auth::user()->pegawai->id)->get()
         ];
 
         return view("pegawai.cek-gaji.index", $data);

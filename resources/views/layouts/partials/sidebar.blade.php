@@ -177,6 +177,14 @@
                             </a>
                         </li>
                     </ul>
+                    <li class="nav-item">
+                        <a href="{{ route('pegawai.cek-gaji.index') }}" class="nav-link">
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <p>
+                                Cek Gaji
+                            </p>
+                        </a>
+                    </li>
                 </li>
 
                   <li class="nav-item has-treeview {{ Request::is('pegawai/inbox*')?'menu-open':'' }}">
