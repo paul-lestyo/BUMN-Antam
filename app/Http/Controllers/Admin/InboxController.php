@@ -8,7 +8,7 @@ use App\Models\Inbox;
 
 class InboxController extends Controller
 {
-	public function index()
+    public function index()
 	{
 		$data = [
 			'title' => "Inbox - All Data",
