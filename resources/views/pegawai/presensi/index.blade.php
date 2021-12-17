@@ -34,7 +34,7 @@ Dashboard - Admin BUMN Antam
 		  <div class="container-fluid">
 			<!-- Small boxes (Stat box) -->
 			<div class="row">
-			  <div class="col-lg-6 col-6">
+			  <div class="col-lg-6 col-sm-12">
 				<!-- small box -->
 				<div class="small-box {{ $presensi ? 'bg-info' : 'bg-danger' }}">
 				  <div class="inner">
@@ -59,7 +59,7 @@ Dashboard - Admin BUMN Antam
 			  <!-- ./col -->
 
 			  <!-- ./col -->
-			  <div class="col-lg-6 col-6">
+			  <div class="col-lg-6 col-sm-12">
 				<!-- small box -->
 				<div class="small-box {{ $presensi && $presensi->jurnal ? 'bg-info' : 'bg-danger' }}">
 				  <div class="inner">
