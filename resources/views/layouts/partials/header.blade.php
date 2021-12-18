@@ -16,7 +16,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
-  
+  <style>
+	@media screen and (max-width: 768px) {
+		table {
+			display: block !important;
+			overflow-x: auto !important;
+			white-space: nowrap !important;
+		}
+	}
+</style>
   @stack('css')
 </head>
 <body class="hold-transition sidebar-mini">
