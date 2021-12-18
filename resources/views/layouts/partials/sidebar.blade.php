@@ -26,7 +26,7 @@
                   @if (auth()->user()->role_id == 2)
                   <li class="nav-header">ADMIN</li>
                   <li class="nav-item">
-                      <a href="{{ route('admin.dashboard') }}" class="nav-link">
+                      <a href="{{ route('admin.dashboard') }}" class="nav-link {{ Request::is('admin/dashboard')?'active':'' }}">
                           <i class="nav-icon fas fa-tachometer-alt"></i>
                           <p>
                               Dashboard
@@ -137,7 +137,7 @@
                     @elseif (auth()->user()->role_id == 1)
                     <li class="nav-header">PEGAWAI</li>
                     <li class="nav-item">
-                        <a href="{{ route('pegawai.dashboard') }}" class="nav-link">
+                        <a href="{{ route('pegawai.dashboard') }}" class="nav-link {{ Request::is('pegawai/dashboard')?'active':'' }}">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
                             <p>
                                 Dashboard

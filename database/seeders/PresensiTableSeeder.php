@@ -14,6 +14,7 @@ class PresensiTableSeeder extends Seeder
 	 */
 	public function run()
 	{
-		Presensi::factory(500)->create();
+
+		Presensi::factory(600)->create();
 	}
 }
