@@ -76,4 +76,3 @@
 </div>
 <!-- /.content-wrapper -->
 @endsection
-{{  }}
