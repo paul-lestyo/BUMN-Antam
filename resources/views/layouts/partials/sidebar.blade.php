@@ -59,9 +59,9 @@
                       </ul>
                   </li>
                   
-                  <li class="nav-item">
+                  <li class="nav-item {{ Request::is('admin/pengajuan-cuti*')?'menu-open':'' }}">
                     <a href="{{ route('admin.pengajuan-cuti.index') }}" class="nav-link {{ Request::is('admin/pengajuan-cuti*')?'active':'' }}">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <i class="nav-icon fas fa-paperclip"></i>
                         <p>
                             Pengajuan Cuti
                             <i class="right fas fa-angle-left"></i>
@@ -69,7 +69,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/admin/pengajuan-cuti/create"
+                            <a href="#"
                                 class="nav-link {{ Request::is('admin/pengajuan-cuti/create')?'active':'' }}">
                                 <i class="fa fa-plus nav-icon"></i>
                                 <p>Tambah Pengajuan</p>
@@ -84,9 +84,9 @@
                     </ul>
                 </li>
 
-                <li class="nav-item">
-                    <a href="{{ route('admin.pegawai.index') }}" class="nav-link {{ Request::is('admin/pegawai*')?'active':'' }}">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                <li class="nav-item {{ Request::is('admin/pegawai*')?'menu-open':'' }}">
+                    <a href="#" class="nav-link {{ Request::is('admin/pegawai*')?'active':'' }}">
+                        <i class="nav-icon fas fa-users"></i>
                         <p>
                             Pegawai
                             <i class="right fas fa-angle-left"></i>
@@ -109,9 +109,18 @@
                     </ul>
                 </li>
 
+                <li class="nav-item">
+                    <a href="{{ route('admin.presensi.index') }}" class="nav-link {{ Request::is('admin/presensi*')?'active':'' }}">
+                        <i class="nav-icon fas fa-check"></i>
+                        <p>
+                            Presensi
+                        </p>
+                    </a>
+                </li>
+
 				<li class="nav-item {{ Request::is('admin/inbox*')?'menu-open':'' }}">
                     <a href="{{ route('admin.inbox.index') }}" class="nav-link {{ Request::is('admin/inbox*')?'active':'' }}">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <i class="nav-icon fas fa-inbox"></i>
                         <p>
                             Inbox
                             <i class="right fas fa-angle-left"></i>
@@ -147,7 +156,7 @@
 
                     <li class="nav-item">
                         <a href="{{ route('pegawai.presensi.index') }}" class="nav-link {{ Request::is('pegawai/presensi*') ?'active':'' }}">
-                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <i class="nav-icon fas fa-check"></i>
                             <p>
                                 Presensi
                             </p>
@@ -156,7 +165,7 @@
 
                     <li class="nav-item has-treeview {{ Request::is('pegawai/pengajuan-cuti*')?'menu-open':'' }}">
                     <a href="#" class="nav-link {{ Request::is('pegawai/pengajuan-cuti*')?'active':'' }}">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <i class="nav-icon fas fa-paperclip"></i>
                         <p>
                             Pengajuan Cuti
                             <i class="right fas fa-angle-left"></i>
@@ -178,8 +187,8 @@
                         </li>
                     </ul>
                     <li class="nav-item">
-                        <a href="{{ route('pegawai.cek-gaji.index') }}" class="nav-link">
-                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <a href="{{ route('pegawai.cek-gaji.index') }}" class="nav-link {{ Request::is('pegawai/cek-gaji')?'active':'' }}">
+                            <i class="nav-icon fas fa-money-check"></i>
                             <p>
                                 Cek Gaji
                             </p>
@@ -222,8 +231,8 @@
 				  @if (auth()->user()->role_id == 2)
 					<li class="nav-header">PAGES</li>
 					<li class="nav-item">
-						<a href="{{ route('admin.about.index') }}" class="nav-link">
-							<i class="nav-icon fas fa-tachometer-alt"></i>
+						<a href="{{ route('admin.about.index') }}" class="nav-link {{ Request::is('admin/about*')?'active':'' }}">
+							<i class="nav-icon far fa-address-card"></i>
 							<p>
 								About
 							</p>
@@ -254,8 +263,8 @@
 						</ul>
 					</li>
 					<li class="nav-item">
-						<a href="{{ route('admin.contact.index') }}" class="nav-link">
-							<i class="nav-icon fas fa-tachometer-alt"></i>
+						<a href="{{ route('admin.contact.index') }}" class="nav-link {{ Request::is('admin/contact*')?'active':'' }}">
+							<i class="nav-icon fas fa-map-marker-alt"></i>
 							<p>
 								Contact
 							</p>

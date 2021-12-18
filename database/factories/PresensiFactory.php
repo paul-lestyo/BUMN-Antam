@@ -17,7 +17,7 @@ class PresensiFactory extends Factory
 		return [
 			'pegawai_id' => Pegawai::inRandomOrder()->first(),
 			'jurnal' => $this->faker->sentence(6, true),
-			'created_at' => $this->faker->dateTimeBetween('-1 years', '0 days')
+			'created_at' => $this->faker->dateTimeBetween('-2 years', '0 days')
 		];
 	}
 }

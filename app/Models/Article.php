@@ -17,4 +17,9 @@ class Article extends Model
 		$this->attributes['judul'] = $value;
 		$this->attributes['slug'] = Str::slug($value);
 	}
+
+	public function views()
+	{
+		return $this->hasMany(View::class);
+	}
 }

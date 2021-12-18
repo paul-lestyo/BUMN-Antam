@@ -100,6 +100,9 @@
             </h1>
             <small>{{ $article->author }} |  {{ $article->created_at->format('d M Y, H:i')}} WIB</small> 
         </div>
+        <div class="row">
+            <img src="{{ asset($article->img) }}" class="img-fluid" alt="{{ $article->judul }}">
+        </div>
         <div class="row mx-0 mt-3 mx-3 mx-md-4">
             <p>{!! $article->deskripsi !!}</p>
         </div>

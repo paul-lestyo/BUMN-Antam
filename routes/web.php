@@ -83,4 +83,10 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => 'role:admin
 		Route::post('/reply/{id}', [Admin\InboxController::class, 'store'])->name('store');
 		Route::get('/{id}', [Admin\InboxController::class, 'show'])->name('show');
 	});
+
+	Route::group(['as' => 'presensi.', 'prefix' => 'presensi'], function () {
+		Route::get('/', [Admin\PresensiController::class, 'index'])->name('index');
+		Route::get('/create', [Admin\PresensiController::class, 'store'])->name('store');
+		Route::get('/{id}', [Admin\PresensiController::class, 'show'])->name('show');
+	});
 });

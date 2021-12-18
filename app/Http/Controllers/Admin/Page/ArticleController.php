@@ -14,7 +14,7 @@ class ArticleController extends Controller
 	{
 		$data = [
 			"title" => "Admin - Article",
-			"articles" => Article::get()
+			"articles" => Article::with('views')->get()
 		];
 		return view('admin.page.article.index', $data);
 	}
