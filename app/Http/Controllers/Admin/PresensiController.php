@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
 use App\Models\Presensi;
+use App\Models\Pegawai;
 use Illuminate\Support\Carbon;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -12,50 +12,23 @@ class PresensiController extends Controller
 {
     public function index()
 	{
-		$presensi = Presensi::where('pegawai_id', Auth::user()->pegawai->id)->orderBy('created_at', 'DESC');
 		$data = [
 			'title' => "Presensi Pegawai - BUMN ANTAM",
-			'pegawai' => $presensi->get(),
-			'presensi' => $presensi->whereDate('created_at', Carbon::today())->first()
+			'pegawai' => Pegawai::get(),
 		];
 
 
 		return view("admin.presensi.index", $data);
 	}
 
-	public function store()
-	{
-		$presensi = Presensi::where('pegawai_id', Auth::user()->pegawai->id)
-			->whereDate('created_at', Carbon::today())->first();
-		if (!$presensi) {
-			Presensi::create(['pegawai_id' => Auth::user()->pegawai->id]);
-		}
+	public function show($id) {
 
-		return redirect()->route('admin.presensi.index');
-	}
-
-	public function edit()
-	{
 		$data = [
-			'title' => "Jurnal Harian Pegawai - BUMN ANTAM"
+			'title' => "Presensi Pegawai - BUMN ANTAM",
+			'pegawai' => Pegawai::findOrFail($id),
+			'presensi' => Presensi::where('pegawai_id', $id)->orderBy('created_at', 'DESC')->get()
 		];
 
-		return view("admin.presensi.jurnal", $data);
-	}
-
-	public function update(Request $request)
-	{
-		$validatedData = $request->validate([
-			'jurnal' => 'required'
-		]);
-
-		$presensi = Presensi::where('pegawai_id', Auth::user()->pegawai->id)
-			->whereDate('created_at', Carbon::today())->first();
-
-		if ($presensi) {
-			$presensi->update($validatedData);
-		}
-
-		return redirect()->route('admin.presensi.index');
+		return view("admin.presensi.show", $data);
 	}
 }

@@ -61,7 +61,7 @@
                                     <tr>
                                         <td class="font-weight-bold">{{ $loop->iteration }}.</td>
                                         <td>{{ $item->judul }}</td>
-                                        <td>{{ Str::limit($item->deskripsi, 50, $end='...') }}</td>
+                                        <td>{!! Str::limit(strip_tags($item->deskripsi), 50, $end='...') !!}</td>
                                         <td>{{ $item->author }}</td>
                                         <td>{{ $item->category }}</td>
                                         <td><img src="{{ asset($item->img) }}" alt="{{ $item->judul }}" style="width: 100px"></td>

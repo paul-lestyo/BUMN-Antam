@@ -87,8 +87,6 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => 'role:admin
 	Route::group(['as' => 'presensi.', 'prefix' => 'presensi'], function () {
 		Route::get('/', [Admin\PresensiController::class, 'index'])->name('index');
 		Route::get('/create', [Admin\PresensiController::class, 'store'])->name('store');
-		Route::get('/create', [Admin\PresensiController::class, 'edit'])->name('edit');
-		Route::post('/update/{id}', [Admin\PresensiController::class, 'update'])->name('update');
-		Route::delete('/destroy/{id}', [Admin\PresensiController::class, 'destroy'])->name('destroy');
+		Route::get('/{id}', [Admin\PresensiController::class, 'show'])->name('show');
 	});
 });

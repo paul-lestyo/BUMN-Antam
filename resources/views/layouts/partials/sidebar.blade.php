@@ -114,24 +114,8 @@
                         <i class="nav-icon fas fa-check"></i>
                         <p>
                             Presensi
-                            <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="/admin/presensi/create"
-                                class="nav-link {{ Request::is('admin/presensi/create')?'active':'' }}">
-                                <i class="fa fa-plus nav-icon"></i>
-                                <p>Tambah Presensi</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/admin/presensi" class="nav-link {{ Request::is('admin/presensi') ?'active':'' }}">
-                                <i class="fa fa-list nav-icon"></i>
-                                <p>Presensi Pegawai</p>
-                            </a>
-                        </li>
-                    </ul>
                 </li>
 
 				<li class="nav-item {{ Request::is('admin/inbox*')?'menu-open':'' }}">

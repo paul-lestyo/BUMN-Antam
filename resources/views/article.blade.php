@@ -135,7 +135,7 @@
                             <small style="font-size: 10px;" class="align-self-center">{{ $article->created_at->diffForHumans() }}</small>
                         </div>
                         <h4 class="card-title my-3">{{ $article->judul }}</h4>
-                        <p class="card-text">{!! substr($article->deskripsi,0,150) !!}...</p>
+                        <p class="card-text">{!! substr(strip_tags($article->deskripsi),0,150) !!}...</p>
                         <small class="d-block text-right">{{ $article->author }}</small>
                     </div>
                 </div>
