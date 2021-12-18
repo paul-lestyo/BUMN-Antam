@@ -69,7 +69,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#"
+                            <a href="{{ route('admin.pengajuan-cuti.create') }}"
                                 class="nav-link {{ Request::is('admin/pengajuan-cuti/create')?'active':'' }}">
                                 <i class="fa fa-plus nav-icon"></i>
                                 <p>Tambah Pengajuan</p>
