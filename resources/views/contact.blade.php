@@ -57,9 +57,7 @@
         /* background: #0A0F16; */
         background: white;
         border-radius: 12px !important;
-        width: 364px !important;
         margin-top: 56px !important;
-        width: 25.25rem !important;
         border-top: 8px solid #1E7872 !important;
         box-shadow: 0 .250rem .50rem rgba(0, 0, 0, .1) !important;
     }
