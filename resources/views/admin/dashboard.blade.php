@@ -45,7 +45,7 @@ Dashboard - Admin BUMN Antam
 				  <div class="icon">
 					<i class="ion ion-android-person"></i>
 				  </div>
-				  <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+				  <a href="{{ route('admin.pegawai.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
 				</div>
 			  </div>
 			  <!-- ./col -->
@@ -60,7 +60,7 @@ Dashboard - Admin BUMN Antam
 				  <div class="icon">
 					<i class="ion ion-ios-book"></i>
 				  </div>
-				  <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+				  <a href="{{ route('admin.divisi.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
 				</div>
 			  </div>
 			  <!-- ./col -->
@@ -75,7 +75,7 @@ Dashboard - Admin BUMN Antam
 				  <div class="icon">
 					<i class="ion ion-ios-paper"></i>
 				  </div>
-				  <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+				  <a href="{{ route('admin.article.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
 				</div>
 			  </div>
 			  <!-- ./col -->
@@ -90,7 +90,7 @@ Dashboard - Admin BUMN Antam
 				  <div class="icon">
 					<i class="ion ion-stats-bars"></i>
 				  </div>
-				  <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+				  <a href="{{ route('admin.article.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
 				</div>
 			  </div>
 			  <!-- ./col -->

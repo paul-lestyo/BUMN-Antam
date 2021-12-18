@@ -13,12 +13,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Kelola Pegawai</h1>
+                    <h1 class="m-0">Kelola Artikel</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Admin</a></li>
-                        <li class="breadcrumb-item active">Kelola Pegawai</li>
+                        <li class="breadcrumb-item active">Kelola Artikel</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -41,9 +41,9 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header d-flex justify-content-between align-items-center flex-row">
-                            <h5 class="mb-0">Pegawai</h5>
+                            <h5 class="mb-0">Artikel</h5>
                             <a class="btn btn-sm btn-primary mr-0 ml-auto" href="{{ route('admin.article.create') }}"><i
-                                class="fa fa-plus"></i> Tambah Pegawai Baru</a>
+                                class="fa fa-plus"></i> Tambah Artikel Baru</a>
                         </div>
                         <div class="card-body">
                             <table class="table">
@@ -54,6 +54,7 @@
                                     <th>Author</th>
                                     <th>Category</th>
                                     <th>Image</th>
+									<th>Views</th>
                                     <th>Aksi</th>
                                 </th>
                                 <tbody class="text-center">
@@ -65,6 +66,7 @@
                                         <td>{{ $item->author }}</td>
                                         <td>{{ $item->category }}</td>
                                         <td><img src="{{ asset($item->img) }}" alt="{{ $item->judul }}" style="width: 100px"></td>
+										<td>{{ $item->views->sum('count') }}</td>
                                         <td>
                                             <a href="{{ route('admin.article.edit', $item->id) }}" class="btn btn-sm btn-info my-1" title="Edit Data">
                                                 <i class="fa fa-pen"></i>
