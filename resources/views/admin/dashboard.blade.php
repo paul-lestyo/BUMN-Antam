@@ -43,7 +43,7 @@ Dashboard - Admin BUMN Antam
 					<p>Jumlah Pegawai</p>
 				  </div>
 				  <div class="icon">
-					<i class="ion ion-bag"></i>
+					<i class="ion ion-android-person"></i>
 				  </div>
 				  <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
 				</div>
@@ -58,7 +58,7 @@ Dashboard - Admin BUMN Antam
 					<p>Jumlah Divisi</p>
 				  </div>
 				  <div class="icon">
-					<i class="ion ion-stats-bars"></i>
+					<i class="ion ion-ios-book"></i>
 				  </div>
 				  <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
 				</div>
@@ -73,7 +73,7 @@ Dashboard - Admin BUMN Antam
 					<p>Jumlah Artikel</p>
 				  </div>
 				  <div class="icon">
-					<i class="ion ion-person-add"></i>
+					<i class="ion ion-ios-paper"></i>
 				  </div>
 				  <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
 				</div>
@@ -88,7 +88,7 @@ Dashboard - Admin BUMN Antam
 					<p>Jumlah Pengunjung</p>
 				  </div>
 				  <div class="icon">
-					<i class="ion ion-pie-graph"></i>
+					<i class="ion ion-stats-bars"></i>
 				  </div>
 				  <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
 				</div>
@@ -132,132 +132,36 @@ Dashboard - Admin BUMN Antam
 				  </div>
 				  <!-- /.card -->
 				</section>
-				<!-- /.Left col -->
-				<!-- Left col -->
-				<section class="col-lg-6 connectedSortable">
-					<!-- Custom tabs (Charts with tabs)-->
+
+				<section class="col-lg-6">
 					<div class="card">
-					  <div class="card-header">
-						<h3 class="card-title">
-						  <i class="fas fa-chart-pie mr-1"></i>
-						  Sales
-						</h3>
-						<div class="card-tools">
-						  <ul class="nav nav-pills ml-auto">
-							<li class="nav-item">
-							  <a class="nav-link active" href="#revenue-chart2" data-toggle="tab">Area</a>
-							</li>
-							<li class="nav-item">
-							  <a class="nav-link" href="#sales-chart2" data-toggle="tab">Donut</a>
-							</li>
-						  </ul>
-						</div>
-					  </div><!-- /.card-header -->
-					  <div class="card-body">
-						<div class="tab-content p-0">
-						  <!-- Morris chart - Sales -->
-						  <div class="chart tab-pane active" id="revenue-chart2"
-							   style="position: relative; height: 300px;">
-							  <canvas id="revenue-chart2-canvas" height="300" style="height: 300px;"></canvas>
-						   </div>
-						  <div class="chart tab-pane" id="sales-chart2" style="position: relative; height: 300px;">
-							<canvas id="sales-chart2-canvas" height="300" style="height: 300px;"></canvas>
+						<div class="card-header">
+							<h3 class="card-title">
+							  <i class="fas fa-chart-pie mr-1"></i>
+							  Presensi Pegawai
+							</h3>
 						  </div>
+					  <div class="card-body">
+						<!-- /.d-flex -->
+		
+						<div class="position-relative mb-4">
+						  <canvas id="sales-chart3" height="260"></canvas>
 						</div>
-					  </div><!-- /.card-body -->
+		
+						<div class="d-flex flex-row justify-content-end">
+						  <span class="mr-2">
+							<i class="fas fa-square text-primary"></i> This year
+						  </span>
+		
+						  <span>
+							<i class="fas fa-square text-gray"></i> Last year
+						  </span>
+						</div>
+					  </div>
 					</div>
 					<!-- /.card -->
 				  </section>
-				  <!-- /.Left col -->
-			  </div>
-			<!-- Main row -->
-			<div class="row">
-				<div class="col-lg-6">
-				  <div class="card">
-					<div class="card-header border-0">
-					  <div class="d-flex justify-content-between">
-						<h3 class="card-title">Online Store Visitors</h3>
-						<a href="javascript:void(0);">View Report</a>
-					  </div>
-					</div>
-					<div class="card-body">
-					  <div class="d-flex">
-						<p class="d-flex flex-column">
-						  <span class="text-bold text-lg">820</span>
-						  <span>Visitors Over Time</span>
-						</p>
-						<p class="ml-auto d-flex flex-column text-right">
-						  <span class="text-success">
-							<i class="fas fa-arrow-up"></i> 12.5%
-						  </span>
-						  <span class="text-muted">Since last week</span>
-						</p>
-					  </div>
-					  <!-- /.d-flex -->
-	  
-					  <div class="position-relative mb-4">
-						<canvas id="visitors-chart" height="200"></canvas>
-					  </div>
-	  
-					  <div class="d-flex flex-row justify-content-end">
-						<span class="mr-2">
-						  <i class="fas fa-square text-primary"></i> This Week
-						</span>
-	  
-						<span>
-						  <i class="fas fa-square text-gray"></i> Last Week
-						</span>
-					  </div>
-					</div>
-				  </div>
-				  <!-- /.card -->
-	  
-				  <!-- /.card -->
-				</div>
-				<!-- /.col-md-6 -->
-				<div class="col-lg-6">
-				  <div class="card">
-					<div class="card-header border-0">
-					  <div class="d-flex justify-content-between">
-						<h3 class="card-title">Sales</h3>
-						<a href="javascript:void(0);">View Report</a>
-					  </div>
-					</div>
-					<div class="card-body">
-					  <div class="d-flex">
-						<p class="d-flex flex-column">
-						  <span class="text-bold text-lg">$18,230.00</span>
-						  <span>Sales Over Time</span>
-						</p>
-						<p class="ml-auto d-flex flex-column text-right">
-						  <span class="text-success">
-							<i class="fas fa-arrow-up"></i> 33.1%
-						  </span>
-						  <span class="text-muted">Since last month</span>
-						</p>
-					  </div>
-					  <!-- /.d-flex -->
-	  
-					  <div class="position-relative mb-4">
-						<canvas id="sales-chart3" height="200"></canvas>
-					  </div>
-	  
-					  <div class="d-flex flex-row justify-content-end">
-						<span class="mr-2">
-						  <i class="fas fa-square text-primary"></i> This year
-						</span>
-	  
-						<span>
-						  <i class="fas fa-square text-gray"></i> Last year
-						</span>
-					  </div>
-					</div>
-				  </div>
-				  <!-- /.card -->
-				</div>
-				<!-- /.col-md-6 -->
-			  </div>
-			<!-- /.row (main row) -->
+				<!-- /.Left col -->
 		  </div><!-- /.container-fluid -->
 		</section>
 		<!-- /.content -->
@@ -352,100 +256,6 @@ Dashboard - Admin BUMN Antam
 		options: pieOptions,
 		});
 
-		var salesChartCanvas = document
-		.getElementById("revenue-chart2-canvas")
-		.getContext("2d");
-		// $('#revenue-chart').get(0).getContext('2d');
-
-		var salesChartData = {
-		labels: ["January", "February", "March", "April", "May", "June", "July"],
-		datasets: [
-			{
-			label: "Digital Goods",
-			backgroundColor: "rgba(60,141,188,0.9)",
-			borderColor: "rgba(60,141,188,0.8)",
-			pointRadius: false,
-			pointColor: "#3b8bba",
-			pointStrokeColor: "rgba(60,141,188,1)",
-			pointHighlightFill: "#fff",
-			pointHighlightStroke: "rgba(60,141,188,1)",
-			data: [28, 48, 40, 19, 86, 27, 90],
-			},
-			{
-			label: "Electronics",
-			backgroundColor: "rgba(210, 214, 222, 1)",
-			borderColor: "rgba(210, 214, 222, 1)",
-			pointRadius: false,
-			pointColor: "rgba(210, 214, 222, 1)",
-			pointStrokeColor: "#c1c7d1",
-			pointHighlightFill: "#fff",
-			pointHighlightStroke: "rgba(220,220,220,1)",
-			data: [65, 59, 80, 81, 56, 55, 40],
-			},
-		],
-		};
-
-		var salesChartOptions = {
-		maintainAspectRatio: false,
-		responsive: true,
-		legend: {
-			display: false,
-		},
-		scales: {
-			xAxes: [
-			{
-				gridLines: {
-				display: false,
-				},
-			},
-			],
-			yAxes: [
-			{
-				gridLines: {
-				display: false,
-				},
-			},
-			],
-		},
-		};
-
-		// This will get the first returned node in the jQuery collection.
-		// eslint-disable-next-line no-unused-vars
-		var salesChart = new Chart(salesChartCanvas, {
-		// lgtm[js/unused-local-variable]
-		type: "line",
-		data: salesChartData,
-		options: salesChartOptions,
-		});
-
-		// Donut Chart
-		var pieChartCanvas = $("#sales-chart2-canvas").get(0).getContext("2d");
-		var pieData = {
-		labels: ["Instore Sales", "Download Sales", "Mail-Order Sales"],
-		datasets: [
-			{
-			data: [30, 12, 20],
-			backgroundColor: ["#f56954", "#00a65a", "#f39c12"],
-			},
-		],
-		};
-		var pieOptions = {
-		legend: {
-			display: false,
-		},
-		maintainAspectRatio: false,
-		responsive: true,
-		};
-		// Create pie or douhnut chart
-		// You can switch between pie and douhnut using the method below.
-		// eslint-disable-next-line no-unused-vars
-		var pieChart = new Chart(pieChartCanvas, {
-		// lgtm[js/unused-local-variable]
-		type: "doughnut",
-		data: pieData,
-		options: pieOptions,
-		});
-
 		var ticksStyle = {
 		fontColor: "#495057",
 		fontStyle: "bold",
@@ -460,17 +270,17 @@ Dashboard - Admin BUMN Antam
 		var salesChart = new Chart($salesChart, {
 		type: "bar",
 		data: {
-			labels: ["JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"],
+			labels: {!! json_encode(array_keys($presensi_tahun_ini->toArray())) !!},
 			datasets: [
 			{
 				backgroundColor: "#007bff",
 				borderColor: "#007bff",
-				data: [1000, 2000, 3000, 2500, 2700, 2500, 3000],
+				data: {!! json_encode(array_values($presensi_tahun_ini->toArray())) !!},
 			},
 			{
 				backgroundColor: "#ced4da",
 				borderColor: "#ced4da",
-				data: [700, 1700, 2700, 2000, 1800, 1500, 2000],
+				data: {!! json_encode(array_values($presensi_tahun_kemarin->toArray())) !!},
 			},
 			],
 		},
@@ -500,16 +310,6 @@ Dashboard - Admin BUMN Antam
 				ticks: $.extend(
 					{
 					beginAtZero: true,
-
-					// Include a dollar sign in the ticks
-					callback: function (value) {
-						if (value >= 1000) {
-						value /= 1000;
-						value += "k";
-						}
-
-						return "$" + value;
-					},
 					},
 					ticksStyle
 				),

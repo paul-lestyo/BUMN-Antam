@@ -45,7 +45,7 @@ Dashboard - Admin BUMN Antam
 				  <div class="icon">
 					<i class="ion ion-bag"></i>
 				  </div>
-				  <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+				  <a href="{{ route('pegawai.presensi.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
 				</div>
 			  </div>
 			  <!-- ./col -->
@@ -60,7 +60,7 @@ Dashboard - Admin BUMN Antam
 				  <div class="icon">
 					<i class="ion ion-stats-bars"></i>
 				  </div>
-				  <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+				  <a href="{{ route('pegawai.pengajuan-cuti.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
 				</div>
 			  </div>
 			  <!-- ./col -->
@@ -75,7 +75,7 @@ Dashboard - Admin BUMN Antam
 				  <div class="icon">
 					<i class="ion ion-person-add"></i>
 				  </div>
-				  <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+				  <a href="{{ route('pegawai.inbox.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
 				</div>
 			  </div>
 			  <!-- ./col -->
@@ -90,7 +90,7 @@ Dashboard - Admin BUMN Antam
 				  <div class="icon">
 					<i class="ion ion-pie-graph"></i>
 				  </div>
-				  <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+				  <a href="{{ route('pegawai.pesanMasuk') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
 				</div>
 			  </div>
 			  <!-- ./col -->
@@ -98,7 +98,7 @@ Dashboard - Admin BUMN Antam
 			<!-- /.row -->
 			<div class="row">
 				<!-- Left col -->
-				<section class="col-lg-6 connectedSortable">
+				<section class="col-lg-12 connectedSortable">
 				  <!-- Custom tabs (Charts with tabs)-->
 				  <div class="card">
 					<div class="card-header">
