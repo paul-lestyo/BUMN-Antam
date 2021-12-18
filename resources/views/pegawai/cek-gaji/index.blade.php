@@ -30,7 +30,7 @@
           <div class="col-12">
             <div class="callout callout-info">
               <h5><i class="fas fa-info"></i> Note:</h5>
-              This page has been enhanced for printing. Click the print button at the bottom of the invoice to test.
+              Slip gaji ini bisa diambil diawal bulan ke divisi Bendahara.
             </div>
 
 
@@ -40,38 +40,12 @@
               <div class="row">
                 <div class="col-12">
                   <h4>
-                    <i class="fas fa-globe"></i> AdminLTE, Inc.
-                    <small class="float-right">Date: 2/10/2014</small>
+                    <i class="fas fa-globe"></i> PT ANTAM TBK, Inc.
+                    <small class="float-right">Date: {{date('d/m/Y')}}</small>
                   </h4>
                 </div>
                 <!-- /.col -->
               </div>
-              <!-- info row -->
-              <div class="row invoice-info">
-                <div class="col-sm-6 invoice-col">
-                  From
-                  <address>
-                    <strong>Admin, Inc.</strong><br>
-                    795 Folsom Ave, Suite 600<br>
-                    San Francisco, CA 94107<br>
-                    Phone: (804) 123-5432<br>
-                    Email: info@almasaeedstudio.com
-                  </address>
-                </div>
-                <!-- /.col -->
-                <div class="col-sm-6 invoice-col">
-                  To
-                  <address>
-                    <strong>John Doe</strong><br>
-                    795 Folsom Ave, Suite 600<br>
-                    San Francisco, CA 94107<br>
-                    Phone: (555) 539-1037<br>
-                    Email: john.doe@example.com
-                  </address>
-                </div>
-                
-              </div>
-              <!-- /.row -->
 
               <!-- Table row -->
               <div class="row">
@@ -79,35 +53,54 @@
                   <table class="table table-striped">
                     <thead>
                     <tr>
-                      <th>No</th>
                       <th>Gaji Pokok</th>
                       <th>Persentase Kehadiran</th>
                       <th>Gaji Total</th>
                     </tr>
                     </thead>
                     <tbody>
-                    {{-- <tr>
-                      @foreach ($cek_gaji as $item)
-                      <td class="font-weight-bold">{{ $loop->iteration }}.</td>
-                      <td>{{ $item->gaji_pokok}}</td>
-                      <td>{{ $item->presensi}}</td>
-                      <td>{{ $item->gaji_total}}</td>
-                    </tr> --}}
+                    <tr>
+                        <td>{{ "Rp " .number_format($gaji,2,',','.') }}</td>
+                        <td>{{ number_format($persentase*100, 2, '.', '') }} %</td>
+                        <td>{{ "Rp " .number_format($sub_gaji,2,',','.') }}</td>
+                    </tr>
                     </tbody>
                   </table>
                 </div>
               </div>
+              
+              <div class="row">
+                <!-- accepted payments column -->
+                <div class="col-6">
+                </div>
+                <!-- /.col -->
+                <div class="col-6">
+                  <p class="lead">Amount Due {{date('d/m/Y')}}</p>
+
+                  <div class="table-responsive">
+                    <table class="table">
+                      <tr>
+                        <th style="width:50%">Subtotal:</th>
+                        <td>{{ "Rp " .number_format($sub_gaji,2,',','.') }}</td>
+                      </tr>
+                      <tr>
+                        <th>Pajak (10%)</th>
+                        <td>{{ "Rp " .number_format($pajak,2,',','.') }}</td>
+                      </tr>
+                      <tr>
+                        <th>Total:</th>
+                        <td>{{ "Rp " .number_format($total_gaji,2,',','.') }}</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <!-- /.col -->
+              </div>
+              <!-- /.row -->
 
               <!-- this row will not appear when printing -->
               <div class="row no-print">
                 <div class="col-12">
-                  <a href="invoice-print.html" target="_blank" class="btn btn-default"><i class="fas fa-print"></i> Print</a>
-                  <button type="button" class="btn btn-success float-right"><i class="far fa-credit-card"></i> Submit
-                    Payment
-                  </button>
-                  <button type="button" class="btn btn-primary float-right" style="margin-right: 5px;">
-                    <i class="fas fa-download"></i> Generate PDF
-                  </button>
                 </div>
               </div>
             </div>

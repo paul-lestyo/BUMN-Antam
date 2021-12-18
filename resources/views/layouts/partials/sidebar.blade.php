@@ -109,6 +109,31 @@
                     </ul>
                 </li>
 
+                <li class="nav-item">
+                    <a href="{{ route('admin.presensi.index') }}" class="nav-link {{ Request::is('admin/presensi*')?'active':'' }}">
+                        <i class="nav-icon fas fa-check"></i>
+                        <p>
+                            Presensi
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/admin/presensi/create"
+                                class="nav-link {{ Request::is('admin/presensi/create')?'active':'' }}">
+                                <i class="fa fa-plus nav-icon"></i>
+                                <p>Tambah Presensi</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/admin/presensi" class="nav-link {{ Request::is('admin/presensi') ?'active':'' }}">
+                                <i class="fa fa-list nav-icon"></i>
+                                <p>Presensi Pegawai</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
 				<li class="nav-item {{ Request::is('admin/inbox*')?'menu-open':'' }}">
                     <a href="{{ route('admin.inbox.index') }}" class="nav-link {{ Request::is('admin/inbox*')?'active':'' }}">
                         <i class="nav-icon fas fa-inbox"></i>
@@ -178,7 +203,7 @@
                         </li>
                     </ul>
                     <li class="nav-item">
-                        <a href="{{ route('pegawai.cek-gaji.index') }}" class="nav-link">
+                        <a href="{{ route('pegawai.cek-gaji.index') }}" class="nav-link {{ Request::is('pegawai/cek-gaji')?'active':'' }}">
                             <i class="nav-icon fas fa-money-check"></i>
                             <p>
                                 Cek Gaji
